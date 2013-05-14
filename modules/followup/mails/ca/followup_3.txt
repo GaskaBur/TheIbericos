@@ -1,0 +1,14 @@
+Hola {firstname} {lastname},
+ 
+Sou un dels nostres millors clients i ens agradaria donar-vos les gràcies per la vostra confiança continuada.
+
+Per apreciar la vostra lleialtat, us volem oferir un descompte d'un {amount}% per a la vostra propera comanda! Aquesta oferta només serà vàlida per {days} dies, de manera que no podeu perdre ni un moment!
+
+
+El vostre número de cupó és  {voucher_num}
+
+Introduïu aquest codi al vostre carret per aconseguir el descompte del cupó.
+
+
+{shop_name} és gestionat amb PrestaShop™
+

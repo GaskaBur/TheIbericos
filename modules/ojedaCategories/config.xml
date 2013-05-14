@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+        <module>
+            <name>ojedaCategories</name>
+            <displayName><![CDATA[NoisesOfHill - Muestras las categorias en layout Principal]]></displayName>
+            <version><![CDATA[1.0]]></version>
+            <description><![CDATA[Ojeda Categorias | created by Noises Of Hill]]></description>
+            <author><![CDATA[Sergio Gil Perez]]></author>
+            <tab><![CDATA[others]]></tab>
+            <is_configurable>0</is_configurable>
+            <need_instance>1</need_instance>
+	<limited_countries></limited_countries>
+        </module>

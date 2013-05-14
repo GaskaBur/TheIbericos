@@ -1,0 +1,7 @@
+Hola,
+
+Gràcies per haver-vos subscrit a la nostra newsletter, si us plau cal que confirmeu la vostra petició fent clic a l'enllaç de sota:
+
+{verif_url}
+
+{shop_url} és gestionat amb PrestaShop™
