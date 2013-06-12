@@ -24,6 +24,7 @@
 *  International Registered Trademark & Property of PrestaShop SA
 *}
 
+{if Tools::getValue('content_only') != 1}
 {if !empty($display_header)}
 	{include file='./header.tpl' HOOK_HEADER=$HOOK_HEADER}
 {/if}
@@ -31,11 +32,14 @@
 {if !empty($display_footer)}
 	{include file='./headercore.tpl'}
 {/if}
+{/if}
 {if !empty($template)}
 	{$template}
 {/if}
+{if Tools::getValue('content_only') != 1}
 {if !empty($display_footer)}
 	{include file='./footer.tpl'}
+{/if}
 {/if}
 
 
