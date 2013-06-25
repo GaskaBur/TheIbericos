@@ -7,11 +7,12 @@ class FrontController extends FrontControllerCore
 	{
 	    parent::setMedia();
 	    Tools::addCSS(_THEME_CSS_DIR_.'normalize.css');
+	    Tools::addCSS(_THEME_CSS_DIR_.'foundation.css');
 	    Tools::addCSS(_THEME_CSS_DIR_.'app.css');
-		Tools::addCSS(_THEME_CSS_DIR_.'app_inno.css');
-	    //Tools::addCSS(_THEME_CSS_DIR_.'foundation.css');
+
 	    Tools::addCSS('http://fonts.googleapis.com/css?family=Princess+Sofia');
 	    Tools::addCSS('http://fonts.googleapis.com/css?family=Abel');
+
 	    Tools::addJS(_THEME_JS_DIR_.'vendor/custom.modernizr.js');
     
     }

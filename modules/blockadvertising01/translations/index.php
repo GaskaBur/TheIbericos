@@ -1,4 +1,5 @@
-{*
+<?php
+/*
 * 2007-2012 PrestaShop
 *
 * NOTICE OF LICENSE
@@ -21,28 +22,14 @@
 *  @copyright  2007-2012 PrestaShop SA
 *  @license    http://opensource.org/licenses/afl-3.0.php  Academic Free License (AFL 3.0)
 *  International Registered Trademark & Property of PrestaShop SA
-*}
-
-<!-- Block categories module -->
-<div id="categories_block_left" class="web-modulo large-12 columns">
-	<p class="title_block">{l s='Categories' mod='blockcategories'}</p>
-	<div class="block_content">
-		<ul class="tree {if $isDhtml}dhtml{/if}">
-		{foreach from=$blockCategTree.children item=child name=blockCategTree}
-			{if $smarty.foreach.blockCategTree.last}
-				{include file="$branche_tpl_path" node=$child last='true'}
-			{else}
-				{include file="$branche_tpl_path" node=$child}
-			{/if}
-		{/foreach}
-		</ul>
-		{* Javascript moved here to fix bug #PSCFI-151 *}
-		<script type="text/javascript">
-		// <![CDATA[
-			// we hide the tree only if JavaScript is activated
-			$('div#categories_block_left ul.dhtml').hide();
-		// ]]>
-		</script>
-	</div>
-</div>
-<!-- /Block categories module -->
+*/
+				    	
+header("Expires: Mon, 26 Jul 1997 05:00:00 GMT");
+header("Last-Modified: ".gmdate("D, d M Y H:i:s")." GMT");
+						
+header("Cache-Control: no-store, no-cache, must-revalidate");
+header("Cache-Control: post-check=0, pre-check=0", false);
+header("Pragma: no-cache");
+						
+header("Location: ../");
+exit;

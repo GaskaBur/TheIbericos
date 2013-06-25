@@ -150,7 +150,7 @@ class BlockCategories extends Module
 		if (!isset($resultIds[$id_category]))
 			return false;
 		$return = array('id' => $id_category, 'link' => $this->context->link->getCategoryLink($id_category, $resultIds[$id_category]['link_rewrite']),
-					 'name' => $resultIds[$id_category]['name'], 'desc'=> $resultIds[$id_category]['description'],
+					 'name' => $resultIds[$id_category]['nombre_corto'], 'desc'=> $resultIds[$id_category]['description'],
 					 'children' => $children);
 		return $return;
 	}
@@ -171,7 +171,7 @@ class BlockCategories extends Module
 		{
 			$maxdepth = Configuration::get('BLOCK_CATEG_MAX_DEPTH');
 			if (!$result = Db::getInstance(_PS_USE_SQL_SLAVE_)->executeS('
-				SELECT c.id_parent, c.id_category, cl.name, cl.description, cl.link_rewrite
+				SELECT c.id_parent, c.id_category, cl.name, cl.nombre_corto, cl.description, cl.link_rewrite
 				FROM `'._DB_PREFIX_.'category` c
 				INNER JOIN `'._DB_PREFIX_.'category_lang` cl ON (c.`id_category` = cl.`id_category` AND cl.`id_lang` = '.$id_lang.Shop::addSqlRestrictionOnLang('cl').')
 				INNER JOIN `'._DB_PREFIX_.'category_shop` cs ON (cs.`id_category` = c.`id_category` AND cs.`id_shop` = '.(int)$this->context->shop->id.')
@@ -184,7 +184,6 @@ class BlockCategories extends Module
 
 			$resultParents = array();
 			$resultIds = array();
-
 			foreach ($result as &$row)
 			{
 				$resultParents[$row['id_parent']][] = &$row;

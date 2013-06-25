@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8" ?>
         <module>
             <name>blocklanguages</name>
-            <displayName><![CDATA[Language block]]></displayName>
+            <displayName><![CDATA[Bloque de idiomas]]></displayName>
             <version><![CDATA[1.1]]></version>
-            <description><![CDATA[Adds a block for selecting a language.]]></description>
+            <description><![CDATA[A&ntilde;adir un bloque para seleccionar idioma]]></description>
             <author><![CDATA[PrestaShop]]></author>
             <tab><![CDATA[front_office_features]]></tab>
             <is_configurable>0</is_configurable>

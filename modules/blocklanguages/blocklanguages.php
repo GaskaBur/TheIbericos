@@ -45,7 +45,7 @@ class BlockLanguages extends Module
 
 	public function install()
 	{
-		return (parent::install() && $this->registerHook('top') && $this->registerHook('header'));
+		return (parent::install() && $this->registerHook('leftColumn') && $this->registerHook('header'));
 	}
 
 	private function _prepareHook($params)
@@ -95,6 +95,13 @@ class BlockLanguages extends Module
 	* @return string Content
 	*/
 	public function hookTop($params)
+	{
+		if (!$this->_prepareHook($params))
+			return;
+		return $this->display(__FILE__, 'blocklanguages.tpl');
+	}
+
+	public function hookLeftColumn($params)
 	{
 		if (!$this->_prepareHook($params))
 			return;
