@@ -15,7 +15,7 @@ class NOHCustomList extends Module
 		$this->ps_versions_compliancy = array('min' => '1.5', 'max' => '1.6');	
 		parent::__construct();
 		
-		$this->displayName = $this->l('NOHCustomList');
+		$this->displayName = $this->l('NOH Home Featured');
 		$this->description = $this->l('Lista de productos personalizadas | created by Noises Of Hill');
 	}
 	
@@ -24,20 +24,21 @@ class NOHCustomList extends Module
 	*/
 	public function install()
 	{	 	
-        Configuration::updateValue('NOHCL_titulo', '');
-        Configuration::updateValue('NOHCL_productos', '');
+        //Configuration::updateValue('NOHHF_Titulo', '');
+        //Configuration::updateValue('NOHHF_SubTitulo', '');
+        Configuration::updateValue('NOHHF_Productos', '');
         return (parent::install() AND $this->registerHook('displayHeader') 
-		 		&& $this->registerHook('NOHCustomList')
+		 		&& $this->registerHook('displayLeftColumn')
 		 	);
 	}
 
 	
 
-	public function hookNOHCustomList()
+	public function hookDisplayLeftColumn()
 	{				
 		$lista = array();
-		if (Configuration::get('NOHCL_productos') != "")
-			$lista = explode("|", Configuration::get('NOHCL_productos'));
+		if (Configuration::get('NOHHF_Productos') != "")
+			$lista = explode("|", Configuration::get('NOHHF_Productos'));
 		
 		if (count($lista > 0))
 		{
@@ -58,8 +59,9 @@ class NOHCustomList extends Module
 	
 	public function uninstall()
 	{
-		Configuration::deleteByName('NOHCL_titulo');
-		Configuration::deleteByName('NOHCL_productos');
+		//Configuration::deleteByName('NOHHF_Titulo');
+		//Configuration::deleteByName('NOHHF_SubTitulo');
+		Configuration::deleteByName('NOHHF_Productos');
 		return (parent::uninstall());
 	}  
 
@@ -67,38 +69,175 @@ class NOHCustomList extends Module
 	{
 		$output = null;
 		$lista = array();
-		$lista = explode("|", Configuration::get('NOHCL_productos'));
+		if (Configuration::get('NOHHF_Productos') != "")
+			$lista = explode("|", Configuration::get('NOHHF_Productos'));
+		
 
  
-		if (Tools::isSubmit('titulo'))
+		if (Tools::isSubmit('NOCL_productsListSelected'))
 		{
-			if (isset($_POST['NOCL_productsList']))
-				$lista = $_POST['NOCL_productsList'];
+			if (isset($_POST['NOCL_productsListSelected']))
+				$lista = $_POST['NOCL_productsListSelected'];
 			else
 				$lista = array();
-			Configuration::updateValue('NOHCL_titulo', Tools::getValue('titulo'));
-			Configuration::updateValue('NOHCL_productos', implode("|", $lista));
+
+		
+			$nuevaLista = implode("|", $lista);
+			
+			//Configuration::updateValue('NOHHF_Titulo', Tools::getValue('titulo'));
+			//Configuration::updateValue('NOHHF_SubTitulo', Tools::getValue('subtitulo'));
+			Configuration::updateValue('NOHHF_Productos', $nuevaLista);
 			$output .= $this->displayConfirmation($this->l('Settings updated'));			
 		}
 		
-		$products = Product::getProducts(4, 0, 0, 'name', 'ASC');
-		$output.= '<form method="post" action="'.$_SERVER['REQUEST_URI'].'" enctype="multipart/form-data">
+		$products = Product::getProducts(4, 0, 0, 'name', 'ASC',false,true,null);
+		$output .= '<script type="text/javascript">
+					<!--
+
+					function envioFormulario()
+					{
+						
+						 for(i=document.getElementById('."'NOCL_productsListSelected'".').length-1; i>=0; i--)
+						  {
+						    document.getElementById('."'NOCL_productsListSelected'".').options[i].selected = true;
+						  }
+						document.getElementById('."'formularioLista'".').submit();
+
+					}
+					function arriba() {
+					  obj=document.getElementById('."'NOCL_productsListSelected'".');
+					  indice=obj.selectedIndex;
+					  if (indice>0) cambiar(obj,indice,indice-1);
+					}
+					function abajo() {
+					  obj=document.getElementById('."'NOCL_productsListSelected'".');
+					  indice=obj.selectedIndex;
+					  if (indice!=-1 && indice<obj.length-1)
+					    cambiar(obj,indice,indice+1);
+					}
+					function cambiar(obj,num1,num2) {
+					  proVal=obj.options[num1].value;
+					  proTex=obj.options[num1].text;
+					  obj.options[num1].value=obj.options[num2].value;  
+					  obj.options[num1].text=obj.options[num2].text;  
+					  obj.options[num2].value=proVal;
+					  obj.options[num2].text=proTex;
+					  obj.selectedIndex=num2;
+					}
+					-->
+					</script>';
+
+			$output .= '<script language="JavaScript" type="text/javascript">
+<!--
+
+var NS4 = (navigator.appName == "Netscape" && parseInt(navigator.appVersion) < 5);
+
+function addOption(theSel, theText, theValue)
+{
+  var newOpt = new Option(theText, theValue);
+  var selLength = theSel.length;
+  theSel.options[selLength] = newOpt;
+}
+
+function deleteOption(theSel, theIndex)
+{ 
+  var selLength = theSel.length;
+  if(selLength>0)
+  {
+    theSel.options[theIndex] = null;
+  }
+}
+
+function moveOptions(theSelFrom, theSelTo)
+{
+  
+  var selLength = theSelFrom.length;
+  var selectedText = new Array();
+  var selectedValues = new Array();
+  var selectedCount = 0;
+  
+  var i;
+  
+  // Find the selected Options in reverse order
+  // and delete them from the from Select.
+  for(i=selLength-1; i>=0; i--)
+  {
+    if(theSelFrom.options[i].selected)
+    {
+      selectedText[selectedCount] = theSelFrom.options[i].text;
+      selectedValues[selectedCount] = theSelFrom.options[i].value;
+      deleteOption(theSelFrom, i);
+      selectedCount++;
+    }
+  }
+  
+  // Add the selected text/values in reverse order.
+  // This will add the Options to the to Select
+  // in the same order as they were in the from Select.
+  for(i=selectedCount-1; i>=0; i--)
+  {
+    addOption(theSelTo, selectedText[i], selectedValues[i]);
+  }
+  
+  if(NS4) history.go(0);
+}
+
+//-->
+</script>';
+
+			$output.= '<center><form method="post" action="'.$_SERVER['REQUEST_URI'].'" enctype="multipart/form-data" id="formularioLista">
 			<fieldset style="width: 800px;">
     				<div id="items">';					
 		
+			/*
 			$output .= '<label>Título de la lista de productos</label>';
 			$output .= '<div class="margin-form" style="padding-left:0">';
-			$output .= '<input type="text" name="titulo" style="width:500px;" id="titulo" size="12" maxlength="400" value="'.Configuration::get('NOHCL_titulo').'" />';
+			$output .= '<input type="text" name="subtitulo" style="width:500px;" id="titulo" size="12" maxlength="400" value="'.Configuration::get('NOHHF_Titulo').'" />';
 			$output .= '</div>';
 
-			$output .= '<select name="NOCL_productsList[]" multiple size=20>';
+			$output .= '<label>Subtítulo de la lista de productos</label>';
+			$output .= '<div class="margin-form" style="padding-left:0">';
+			$output .= '<input type="text" name="titulo" style="width:500px;" id="titulo" size="12" maxlength="400" value="'.Configuration::get('NOHHF_Titulo').'" />';
+			$output .= '</div>';
+			*/
+
+			$output .= '<table border="0"><tr>';
+			$output .= '<td>';
+
+
+			$output .= '<select name="NOCL_productsList[]" id="NOCL_productsList" multiple size="20" style="width:320px;">';
 			foreach ($products as $p) {
-				$output .= '<option VALUE="'.$p['id_product'].'" ';
-				if (array_search($p['id_product'], $lista) > -1)
-					$output .= 'selected="selected"';
-				$output .= '>'.$p['id_product'].' - '.$p['name'].'</option>';
+				if (array_search($p['id_product'], $lista) < -1)
+				{
+					$output .= '<option VALUE="'.$p['id_product'].'" ';
+					$output .= '>'.$p['id_product'].' - '.$p['name'].'</option>';
+				}
 			}
 			$output .= '</select>';
+			$output .= '</td>';
+			$output .= '<td>';
+			$output .='<input type="button" value="--&gt;" onclick="moveOptions(this.form.NOCL_productsList, this.form.NOCL_productsListSelected);" /><br />';
+			$output .='<input type="button" value="&lt;--" onclick="moveOptions(this.form.NOCL_productsListSelected, this.form.NOCL_productsList);" />';
+			$output .= '</td>';
+			$output .= '<td>';
+
+			$output .= '<select name="NOCL_productsListSelected[]" id="NOCL_productsListSelected" multiple size="20" style="width:320px;">';
+			foreach ($lista as $p) {
+				$producto = new Product($p);
+				$output .= '<option VALUE="'.$producto->id.'" ';
+				$output .= '>'.$producto->id.' - '.$producto->name[4].'</option>';
+				
+			}
+			$output .= '</select>';
+			
+			$output .= '</td>';
+			$output .= '</tr><tr><td></td><td></td><td>';
+			$output .= 'Primero selecciona producto ';
+			$output .= '<input type="button" value="Arriba" onclick="arriba()" />';
+      		$output .= '<input type="button" value="Abajo" onclick="abajo()" />';
+      		$output .= '</td></td>';
+
+			$output .= '</table>';
 			 	 	
  	 		$output .= '
  	 				<br>
@@ -106,11 +245,11 @@ class NOHCustomList extends Module
 
 					<div class="margin-form">
 
-					 <input type="submit" name="FSPAsubmitUpdate" id="FSPAsubmitUpdate" value="'.$this->l('Guardar').'" class="button" />
+					 <input type="button" name="FSPAsubmitUpdate" id="FSPAsubmitUpdate" value="'.$this->l('Guardar').'" class="button" onclick="envioFormulario()" />
 				</div>
 				</div>
 				</fieldset>
-			</form>';
+			</form></center>';
  	 	
  	 	
  	 	
@@ -172,7 +311,7 @@ class NOHCustomList extends Module
 		);
 		 
 		// Load current value
-		$helper->fields_value['titulo'] = Configuration::get('NOHCL_titulo');
+		$helper->fields_value['titulo'] = Configuration::get('NOHHF_Titulo');
 		
 		 
 		return $helper->generateForm($fields_form);

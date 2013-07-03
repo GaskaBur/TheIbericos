@@ -27,7 +27,7 @@
 $(function(){
 
 	if (typeof(homeslider_speed) == 'undefined')
-		homeslider_speed = 500;
+		homeslider_speed = 2000;
 	if (typeof(homeslider_pause) == 'undefined')
 		homeslider_pause = 3000;
 	if (typeof(homeslider_loop) == 'undefined')
@@ -36,7 +36,8 @@ $(function(){
 	$('#homeslider').bxSlider({
 		infiniteLoop: homeslider_loop,
 		hideControlOnEnd: true,
-		pager: true,
+		mode: 'fade',
+		pager: false,
 		autoHover: true,
 		auto: homeslider_loop,
 		speed: homeslider_speed,

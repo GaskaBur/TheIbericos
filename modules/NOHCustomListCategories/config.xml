@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8" ?>
         <module>
-            <name>NOHCustomList2</name>
-            <displayName><![CDATA[NOHCustom list Promotions]]></displayName>
+            <name>NOHCustomListCategories</name>
+            <displayName><![CDATA[Listado/men&uacute; de categorias adaptado 00]]></displayName>
             <version><![CDATA[1.0]]></version>
-            <description><![CDATA[Lista de productos promocionados| created by Noises Of Hill]]></description>
+            <description><![CDATA[Lista de categor&iacute;as personalizadas | created by Noises Of Hill]]></description>
             <author><![CDATA[Sergio Gil Perez]]></author>
             <tab><![CDATA[others]]></tab>
             <is_configurable>1</is_configurable>

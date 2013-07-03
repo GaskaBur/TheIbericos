@@ -25,50 +25,48 @@
 
 <!-- Block languages module -->
 {if count($languages) > 1}
-<div id="languages_block_top" class="web-modulo large-12 columns">
-	<div id="countries">
-	{* @todo fix display current languages, removing the first foreach loop *}
-{foreach from=$languages key=k item=language name="languages"}
-	{if $language.iso_code == $lang_iso}
-		<p class="selected_language">
-			<img src="{$img_lang_dir}{$language.id_lang}.jpg" alt="{$language.iso_code}" width="16" height="11" />
-		</p>
-	{/if}
-{/foreach}
-		<ul id="first-languages" class="">
-		{foreach from=$languages key=k item=language name="languages"}
-			<li class="">
-			
-				{assign var=indice_lang value=$language.id_lang}
-				{if isset($lang_rewrite_urls.$indice_lang)}
-					<a href="{$lang_rewrite_urls.$indice_lang|escape:htmlall}" title="{$language.name}">
-				{else}
-					<a href="{$link->getLanguageLink($language.id_lang)|escape:htmlall}" title="{$language.name}">
-
+	<div id="languages_block_top" class="web-modulo large-12 columns">
+		<div id="countries">
+			{* @todo fix display current languages, removing the first foreach loop *}
+			{foreach from=$languages key=k item=language name="languages"}
+				{if $language.iso_code == $lang_iso}
+					<p class="selected_language">
+						<img src="{$img_lang_dir}{$language.id_lang}.jpg" alt="{$language.iso_code}" width="16" height="11" />
+					</p>
 				{/if}
-			
-					<img src="{$img_lang_dir}{$language.id_lang}.jpg" alt="{$language.iso_code}" width="50" height="45" />
-			
-				</a>
-			
-			</li>
-		{/foreach}
-		</ul>
+			{/foreach}
+			<nav>
+				<ul id="first-languages" class="">
+				{foreach from=$languages key=k item=language name="languages"}
+					<li class="">			
+						{assign var=indice_lang value=$language.id_lang}
+						{if isset($lang_rewrite_urls.$indice_lang)}
+							<a href="{$lang_rewrite_urls.$indice_lang|escape:htmlall}" title="{$language.name}">
+						{else}
+							<a href="{$link->getLanguageLink($language.id_lang)|escape:htmlall}" title="{$language.name}">
+						{/if}			
+							<img src="{$img_lang_dir}{$language.id_lang}.jpg" alt="{$language.iso_code}" width="50" height="45" />			
+						</a>
+					
+					</li>
+				{/foreach}
+				</ul>
+			</nav>
+		</div>
 	</div>
-</div>
 
-<script type="text/javascript">
-$(document).ready(function () {
-	$("#countries").mouseover(function(){
-		$(this).addClass("countries_hover");
-		$(".countries_ul").addClass("countries_ul_hover");
-	});
-	$("#countries").mouseout(function(){
-		$(this).removeClass("countries_hover");
-		$(".countries_ul").removeClass("countries_ul_hover");
-	});
+	<script type="text/javascript">
+	$(document).ready(function () {
+		$("#countries").mouseover(function(){
+			$(this).addClass("countries_hover");
+			$(".countries_ul").addClass("countries_ul_hover");
+		});
+		$("#countries").mouseout(function(){
+			$(this).removeClass("countries_hover");
+			$(".countries_ul").removeClass("countries_ul_hover");
+		});
 
-});
-</script>
+	});
+	</script>
 {/if}
 <!-- /Block languages module -->

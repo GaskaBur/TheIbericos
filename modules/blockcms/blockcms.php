@@ -715,9 +715,7 @@ class BlockCms extends Module
 
 	public function hookFooter()
 	{
-		if (!$this->_prepareHook())
-			return ;
-		return $this->display(__FILE__, 'blockcms.tpl');
+		return $this->displayBlockCMS(BlockCMSModel::LEFT_COLUMN);
 	}
 
 	protected function updatePositionsDnd()

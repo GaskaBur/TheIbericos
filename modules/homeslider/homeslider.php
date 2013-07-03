@@ -657,6 +657,11 @@ class HomeSlider extends Module
 		return $this->display(__FILE__, 'homeslider.tpl');
 	}
 
+	public function hookDisplayRightColumn()
+	{
+		return $this->hookDisplayHome();
+	}
+
 	public function hookActionShopDataDuplication($params)
 	{
 		Db::getInstance()->execute('
