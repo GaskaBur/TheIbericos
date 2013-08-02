@@ -23,7 +23,7 @@
 *  International Registered Trademark & Property of PrestaShop SA
 *}
 {capture name=path}<a href="{$link->getPageLink('my-account', true)}">{l s='My account'}</a><span class="navigation-pipe">{$navigationPipe}</span>{l s='My vouchers'}{/capture}
-{include file="$tpl_dir./breadcrumb.tpl"}
+{*include file="$tpl_dir./breadcrumb.tpl"*}
 
 <h3>{l s='My vouchers'}</h3>
 
@@ -80,7 +80,7 @@
 	*{l s='Tax included'}
 </p>
 {else}
-	<p class="warning">{l s='You do not have any vouchers.'}</p>
+	<p class="alert-box alert">{l s='You do not have any vouchers.'}</p>
 {/if}
 
 <ul class="footer_links">

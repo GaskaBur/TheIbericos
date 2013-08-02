@@ -24,7 +24,7 @@
 *}
 
 {capture name=path}<a href="{$link->getPageLink('my-account', true)}">{l s='My account' mod='loyalty'}</a><span class="navigation-pipe">{$navigationPipe}</span>{l s='My loyalty points' mod='loyalty'}{/capture}
-{include file="$tpl_dir./breadcrumb.tpl"}
+{*include file="$tpl_dir./breadcrumb.tpl"*}
 
 <h2>{l s='My loyalty points' mod='loyalty'}</h2>
 
@@ -60,7 +60,7 @@
 	</table>
 	<div id="block-order-detail" class="hidden">&nbsp;</div>
 	{else}
-		<p class="warning">{l s='You have not placed any orders.'}</p>
+		<p class="alert-box alert">{l s='You have not placed any orders.'}</p>
 	{/if}
 </div>
 <div id="pagination" class="pagination">
@@ -195,10 +195,10 @@ $(document).ready(function()
 {/literal}
 </script>
 {else}
-<p class="warning">{l s='No vouchers yet.' mod='loyalty'}</p>
+<p class="alert-box alert">{l s='No vouchers yet.' mod='loyalty'}</p>
 {/if}
 {else}
-<p class="warning">{l s='No reward points yet.' mod='loyalty'}</p>
+<p class="alert-box alert">{l s='No reward points yet.' mod='loyalty'}</p>
 {/if}
 
 <ul class="footer_links">

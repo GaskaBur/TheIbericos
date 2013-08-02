@@ -90,6 +90,6 @@
 	<p class="clear" />
 </div>
 {else}
-	<p class="warning">{l s='No products' mod='blockwishlist'}</p>
+	<p class="alert-box alert">{l s='No products' mod='blockwishlist'}</p>
 {/if}
 </div>

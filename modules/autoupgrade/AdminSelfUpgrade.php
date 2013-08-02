@@ -4270,13 +4270,13 @@ txtError[37] = "'.$this->l('The config/defines.inc.php file was not found. Where
 		/* PrestaShop demo mode */
 		if (defined('_PS_MODE_DEMO_') && _PS_MODE_DEMO_)
 		{
-			echo '<div class="error">'.$this->l('This functionnality has been disabled.').'</div>';
+			echo '<div class="error alert-box radius">'.$this->l('This functionnality has been disabled.').'</div>';
 			return;
 		}
 
 		if (!file_exists($this->autoupgradePath.DIRECTORY_SEPARATOR.'ajax-upgradetab.php'))
 		{
-			echo '<div class="error">'.'<img src="../img/admin/warning.gif" /> [TECHNICAL ERROR] '.$this->l('ajax-upgradetab.php is missing. please reinstall or reset the module').'</div>';
+			echo '<div class="error alert-box radius">'.'<img src="../img/admin/warning.gif" /> [TECHNICAL ERROR] '.$this->l('ajax-upgradetab.php is missing. please reinstall or reset the module').'</div>';
 			return false;
 		}
 		/* PrestaShop demo mode*/

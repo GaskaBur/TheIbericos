@@ -55,7 +55,7 @@
 		{include file='./sitemap.tpl'}
 	</div><!-- #content -->
 {else}
-	<p class="warning">
+	<p class="alert-box alert">
 		{if isset($search_query) && $search_query}
 			{l s='No results found for your search'}&nbsp;"{if isset($search_query)}{$search_query|escape:'htmlall':'UTF-8'}{/if}"
 		{elseif isset($search_tag) && $search_tag}

@@ -40,7 +40,7 @@
 		<br /><br />{l s='For any questions or for further information, please contact our' mod='cheque'} <a href="{$link->getPageLink('contact', true)}">{l s='customer support' mod='cheque'}</a>.
 	</p>
 {else}
-	<p class="warning">
+	<p class="alert-box alert">
 		{l s='We noticed a problem with your order. If you think this is an error, you can contact our' mod='cheque'} 
 		<a href="{$link->getPageLink('contact', true)}">{l s='customer support' mod='cheque'}</a>.
 	</p>

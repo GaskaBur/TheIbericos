@@ -24,7 +24,7 @@
 *}
 
 {capture name=path}{l s='Login'}{/capture}
-{include file="$tpl_dir./breadcrumb.tpl"}
+{*include file="$tpl_dir./breadcrumb.tpl"*}
 
 <script type="text/javascript">
 // <![CDATA[
@@ -140,7 +140,7 @@ $(function(){ldelim}
 	{/literal}
 	</script>
 	<!--{if isset($authentification_error)}
-	<div class="error">
+	<div class="error alert-box radius">
 		{if {$authentification_error|@count} == 1}
 			<p>{l s='There is one error'} :</p>
 			{else}
@@ -159,7 +159,7 @@ $(function(){ldelim}
 			<h3>{l s='Create your account'}</h3>
 			<div class="form_content clearfix">
 				<p class="title_block">{l s='Enter your e-mail address to create an account'}.</p>
-				<div class="error" id="create_account_error" style="display:none"></div>
+				<div class="error alert-box radius" id="create_account_error" style="display:none"></div>
 				<p class="text">
 					<label for="email_create">{l s='E-mail address'}</label>
 					<span><input type="text" id="email_create" name="email_create" value="{if isset($smarty.post.email_create)}{$smarty.post.email_create|stripslashes}{/if}" class="account_input" /></span>
@@ -358,7 +358,7 @@ $(function(){ldelim}
 	{/if}
 {else}
 	<!--{if isset($account_error)}
-	<div class="error">
+	<div class="error alert-box radius">
 		{if {$account_error|@count} == 1}
 			<p>{l s='There is one error'} :</p>
 			{else}

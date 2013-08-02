@@ -59,7 +59,7 @@ $(document).ready(function()
 		<label for="selectPrductSort">{l s='Sort by'}</label>
     </div>
         <div class="large-8 columns">
-            <select id="selectPrductSort" class="selectProductSort ">
+            <select id="selectPrductSort" class="selectProductSort medium">
                 <option value="{$orderbydefault|escape:'htmlall':'UTF-8'}:{$orderwaydefault|escape:'htmlall':'UTF-8'}" {if $orderby eq $orderbydefault}selected="selected"{/if}>{l s='--'}</option>
                 {if !$PS_CATALOG_MODE}
                     <option value="price:asc" {if $orderby eq 'price' AND $orderway eq 'asc'}selected="selected"{/if}>{l s='Price: lowest first'}</option>

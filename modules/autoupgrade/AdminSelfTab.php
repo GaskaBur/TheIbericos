@@ -1261,7 +1261,7 @@ abstract class AdminSelfTab
 					});
 				});
 			  </script>
-			<div class="error"><span style="float:right"><a id="hideError" href=""><img alt="X" src="../img/admin/close.png" /></a></span><img src="../img/admin/error2.png" />';
+			<div class="error alert-box radius"><span style="float:right"><a id="hideError" href=""><img alt="X" src="../img/admin/close.png" /></a></span><img src="../img/admin/error2.png" />';
 			if (count($this->_errors) == 1)
 				echo $this->_errors[0];
 			else

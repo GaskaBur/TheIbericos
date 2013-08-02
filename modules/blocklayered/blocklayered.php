@@ -1402,7 +1402,7 @@ class BlockLayered extends Module
 		{
 			if (!Tools::getValue('layered_tpl_name'))
 				$html .= '
-				<div class="error">
+				<div class="error alert-box radius">
 					<span style="float:right">
 						<a href="" id="hideError"><img src="../img/admin/close.png" alt="X"></a>
 					</span>
@@ -1541,7 +1541,7 @@ class BlockLayered extends Module
 			else
 			{
 				$html .= '
-				<div class="error">
+				<div class="error alert-box radius">
 					<img src="../img/admin/error.png" alt="" title="" /> '.$this->l('Filter template not found').'
 				</div>';
 			}
@@ -1844,7 +1844,7 @@ class BlockLayered extends Module
 		}
 		
 		$html .= '
-			<div id="error-treeview" class="error" style="display: none;">
+			<div id="error-treeview" class="error alert-box radius" style="display: none;">
 				<img src="../img/admin/error2.png" alt="" /> '.$this->l('Please select at least one specific category or select "All categories".').'
 			</div>
 			<div style="display: none;">
@@ -2106,7 +2106,7 @@ class BlockLayered extends Module
 				</script>
 			</div>
 			<div id="layered-step-3">
-				<div id="error-filter-name" class="error">
+				<div id="error-filter-name" class="error alert-box radius">
 					<img src="../img/admin/error.png" alt="" title="" />'.$this->l('Errors:').'
 					<ul>
 						<li>'.$this->l('Filter template name required (cannot be empty)').'</li>

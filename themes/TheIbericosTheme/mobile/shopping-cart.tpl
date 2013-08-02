@@ -1,7 +1,7 @@
 {if isset($empty)}
-<p class="warning">{l s='Your shopping cart is empty.'}</p>
+<p class="alert-box alert">{l s='Your shopping cart is empty.'}</p>
 {elseif $PS_CATALOG_MODE}
-<p class="warning">{l s='This store has not accepted your new order.'}</p>
+<p class="alert-box alert">{l s='This store has not accepted your new order.'}</p>
 {else}
 	<div id="displayMobileShoppingCartTop">
 		{hook h="displayMobileShoppingCartTop"}

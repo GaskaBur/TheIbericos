@@ -25,7 +25,7 @@
 
 {capture name=path}{l s='Product Comparison'}{/capture}
 
-{include file="$tpl_dir./breadcrumb.tpl"}
+{*include file="$tpl_dir./breadcrumb.tpl"*}
 <h1>{l s='Product Comparison'}</h1>
 
 {if $hasProduct}
@@ -139,6 +139,6 @@
 	</table>
 </div>
 {else}
-	<p class="warning">{l s='There are no products selected for comparison'}</p>
+	<p class="alert-box alert">{l s='There are no products selected for comparison'}</p>
 {/if}
 

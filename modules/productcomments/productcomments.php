@@ -248,7 +248,7 @@ class ProductComments extends Module
 			$defaultLanguage = new Language((int)(Configuration::get('PS_LANG_DEFAULT')));
 			if (!Tools::getValue('criterion_'.$defaultLanguage->id))
 			{
-				$this->_html .= '<div class="error"><img src="../img/admin/error2.png" />'.$this->l('The field <b>Name</b> is required at least in').' '.$defaultLanguage->name.'</div>';
+				$this->_html .= '<div class="error alert-box radius"><img src="../img/admin/error2.png" />'.$this->l('The field <b>Name</b> is required at least in').' '.$defaultLanguage->name.'</div>';
 				return;
 			}
 

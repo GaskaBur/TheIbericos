@@ -24,7 +24,7 @@
 *}
 
 {capture name=path}<a href="{$link->getPageLink('my-account', true)}">{l s='My account'}</a><span class="navigation-pipe">{$navigationPipe}</span>{l s='Credit slips'}{/capture}
-{include file="$tpl_dir./breadcrumb.tpl"}
+{*include file="$tpl_dir./breadcrumb.tpl"*}
 
 <h3>{l s='Credit slips'}</h3>
 <p>{l s='Credit slips you have received after cancelled orders'}.</p>
@@ -55,7 +55,7 @@
 	</table>
 	<div id="block-order-detail" class="hidden">&nbsp;</div>
 	{else}
-		<p class="warning">{l s='You have not received any credit slips.'}</p>
+		<p class="alert-box alert">{l s='You have not received any credit slips.'}</p>
 	{/if}
 </div>
 <ul class="footer_links">

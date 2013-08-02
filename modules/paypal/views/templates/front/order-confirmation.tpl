@@ -27,7 +27,7 @@
 	{include file="$tpl_dir./modules/paypal/views/templates/front/order-confirmation.tpl"}
 {else}
 	{capture name=path}{l s='Order confirmation' mod='paypal'}{/capture}
-	{include file="$tpl_dir./breadcrumb.tpl"}
+	{*include file="$tpl_dir./breadcrumb.tpl"*}
 
 	<h1>{l s='Order confirmation' mod='paypal'}</h1>
 

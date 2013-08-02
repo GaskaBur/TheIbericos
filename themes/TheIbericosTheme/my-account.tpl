@@ -24,7 +24,7 @@
 *}
 
 {capture name=path}{l s='My account'}{/capture}
-{include file="$tpl_dir./breadcrumb.tpl"}
+{*include file="$tpl_dir./breadcrumb.tpl"*}
 
 <h3>{l s='My account'}</h3>
 {if isset($account_created)}

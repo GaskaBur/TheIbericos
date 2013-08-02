@@ -36,7 +36,7 @@
 	</script>
 
 	{capture name=path}{l s='Your payment method'}{/capture}
-	{include file="$tpl_dir./breadcrumb.tpl"}
+	{*include file="$tpl_dir./breadcrumb.tpl"*}
 {/if}
 
 {if !$opc}<h3>{l s='Choose your payment method'}</h3>{else}<h3><span>3</span> {l s='Choose your payment method'}</h3>{/if}
@@ -167,7 +167,7 @@
 				<td colspan="5" id="cart_voucher" class="cart_voucher">
 				{if $voucherAllowed}
 					{if isset($errors_discount) && $errors_discount}
-						<ul class="error">
+						<ul class="error alert-box radius">
 						{foreach from=$errors_discount key=k item=error}
 							<li>{$error|escape:'htmlall':'UTF-8'}</li>
 						{/foreach}
@@ -186,7 +186,7 @@
 				{if $voucherAllowed}
 				<div id="cart_voucher" class="table_block">
 					{if isset($errors_discount) && $errors_discount}
-						<ul class="error">
+						<ul class="error alert-box radius">
 						{foreach from=$errors_discount key=k item=error}
 							<li>{$error|escape:'htmlall':'UTF-8'}</li>
 						{/foreach}
@@ -334,7 +334,7 @@
 		<div id="HOOK_PAYMENT">{$HOOK_PAYMENT}</div>
 	{if $opc}</div>{/if}
 {else}
-	<p class="warning">{l s='No payment modules have been installed.'}</p>
+	<p class="alert-box alert">{l s='No payment modules have been installed.'}</p>
 {/if}
 
 {if !$opc}

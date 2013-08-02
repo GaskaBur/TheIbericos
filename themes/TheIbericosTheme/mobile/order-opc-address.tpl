@@ -73,7 +73,7 @@
 					<li class="address_country">{$invoice->country|escape:'htmlall':'UTF-8'} {if $invoice_state}({$invoice_state|escape:'htmlall':'UTF-8'}){/if}</li>
 				</ul>
 			{else}
-				<p class="warning">{l s='You have to specify your delivery and invoice address.'}</p>
+				<p class="alert-box alert">{l s='You have to specify your delivery and invoice address.'}</p>
 			{/if}
 			<label for="invoice-address-choice" class="select">{l s='Change address:'}</label>
 			<select

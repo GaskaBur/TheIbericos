@@ -38,7 +38,7 @@ var shopImporter = {
 	       {
 				if (jsonData.hasError)
 	    		{
-	    			$('#steps').html('<div id="lang_feedback" style="display:none;" class="error"><img src="'+shopImporter.srcError+'">'+jsonData.error+'</div>');
+	    			$('#steps').html('<div id="lang_feedback" style="display:none;" class="error alert-box radius"><img src="'+shopImporter.srcError+'">'+jsonData.error+'</div>');
 		    		$('#lang_feedback').fadeIn('slow');
 		    		onComplete(false);
 	    		}
@@ -47,7 +47,7 @@ var shopImporter = {
 	       },
 	      error: function(XMLHttpRequest, textStatus, errorThrown) 
 	       {
-	       		$('#steps').html($('#steps').html()+'<div id="technical_error_feedback" style="display:none;" class="error"><img src="'+shopImporter.srcError+'">TECHNICAL ERROR<br><br>Details: '+XMLHttpRequest.responseText+'</div>');
+	       		$('#steps').html($('#steps').html()+'<div id="technical_error_feedback" style="display:none;" class="error alert-box radius"><img src="'+shopImporter.srcError+'">TECHNICAL ERROR<br><br>Details: '+XMLHttpRequest.responseText+'</div>');
 	       		$('#technical_error_feedback').fadeIn('slow');
 	       		onComplete(false);
 	       }
@@ -67,7 +67,7 @@ var shopImporter = {
 	       {
 				if (jsonData.hasError)
 	    		{
-	    			$('#steps').html('<div id="lang_feedback" style="display:none;" class="error"><img src="'+shopImporter.srcError+'">'+jsonData.error+'</div>');
+	    			$('#steps').html('<div id="lang_feedback" style="display:none;" class="error alert-box radius"><img src="'+shopImporter.srcError+'">'+jsonData.error+'</div>');
 		    		$('#lang_feedback').fadeIn('slow');
 		    		onComplete(false);
 	    		}
@@ -76,7 +76,7 @@ var shopImporter = {
 	       },
 	      error: function(XMLHttpRequest, textStatus, errorThrown) 
 	       {
-	       		$('#steps').html($('#steps').html()+'<div id="technical_error_feedback" style="display:none;" class="error"><img src="'+shopImporter.srcError+'">TECHNICAL ERROR<br><br>Details: '+XMLHttpRequest.responseText+'</div>');
+	       		$('#steps').html($('#steps').html()+'<div id="technical_error_feedback" style="display:none;" class="error alert-box radius"><img src="'+shopImporter.srcError+'">TECHNICAL ERROR<br><br>Details: '+XMLHttpRequest.responseText+'</div>');
 	       		$('#technical_error_feedback').fadeIn('slow');
 	       		onComplete(false);
 	       }
@@ -105,7 +105,7 @@ var shopImporter = {
 	       },
 	      error: function(XMLHttpRequest, textStatus, errorThrown) 
 	       {
-	       		$('#steps').html($('#steps').html()+'<div id="technical_error_feedback" style="display:none;" class="error"><img src="'+shopImporter.srcError+'">TECHNICAL ERROR<br><br>Details: '+XMLHttpRequest.responseText+'</div>');
+	       		$('#steps').html($('#steps').html()+'<div id="technical_error_feedback" style="display:none;" class="error alert-box radius"><img src="'+shopImporter.srcError+'">TECHNICAL ERROR<br><br>Details: '+XMLHttpRequest.responseText+'</div>');
 	       		$('#technical_error_feedback').fadeIn('slow');
 	       		onComplete(false);
 	       }
@@ -124,7 +124,7 @@ var shopImporter = {
 	       {
 				if (jsonData.hasError)
 	    		{
-	    			$('#steps').html('<div id="currency_feedback" style="display:none;" class="error"><img src="'+shopImporter.srcError+'">'+jsonData.error+'</div>');
+	    			$('#steps').html('<div id="currency_feedback" style="display:none;" class="error alert-box radius"><img src="'+shopImporter.srcError+'">'+jsonData.error+'</div>');
 		    		$('#currency_feedback').fadeIn('slow');
 					onComplete(false);
 	    		}
@@ -133,7 +133,7 @@ var shopImporter = {
 	       },
 	      error: function(XMLHttpRequest, textStatus, errorThrown) 
 	       {
-	       		$('#steps').html($('#steps').html()+'<div id="technical_error_feedback" style="display:none;" class="error"><img src="'+shopImporter.srcError+'">TECHNICAL ERROR<br><br>Details: '+XMLHttpRequest.responseText+'</div>');
+	       		$('#steps').html($('#steps').html()+'<div id="technical_error_feedback" style="display:none;" class="error alert-box radius"><img src="'+shopImporter.srcError+'">TECHNICAL ERROR<br><br>Details: '+XMLHttpRequest.responseText+'</div>');
 	       		$('#technical_error_feedback').fadeIn('slow');
 	       		onComplete(false);
 	       }
@@ -260,7 +260,7 @@ var shopImporter = {
 							    }
 							    else
 							    {
-							    	$('#steps').html('<div id="database_feedback" style="display:none;" class="error"><img src="'+shopImporter.srcError+'">'+jsonData.error+'</div>');
+							    	$('#steps').html('<div id="database_feedback" style="display:none;" class="error alert-box radius"><img src="'+shopImporter.srcError+'">'+jsonData.error+'</div>');
 							    	$('#database_feedback').fadeIn('slow');
 							    }
 						       },
@@ -495,7 +495,7 @@ var shopImporter = {
 	       },
 	       error: function(XMLHttpRequest, textStatus, errorThrown) 
 	       {
-	       		$('#steps').html($('#steps').html()+'<div id="technical_error_feedback" style="display:none;" class="error"><img src="'+shopImporter.srcError+'">TECHNICAL ERROR<br><br>Details: '+XMLHttpRequest.responseText+'</div>');
+	       		$('#steps').html($('#steps').html()+'<div id="technical_error_feedback" style="display:none;" class="error alert-box radius"><img src="'+shopImporter.srcError+'">TECHNICAL ERROR<br><br>Details: '+XMLHttpRequest.responseText+'</div>');
 	       		$('#technical_error_feedback').fadeIn('slow');
 	       		$('#checkAndSaveConfig').fadeIn('slow');
 	       }
@@ -543,7 +543,7 @@ var shopImporter = {
 	    	},
 	    	error: function(XMLHttpRequest, textStatus, errorThrown) 
 	       {
-	       		$('#steps').html($('#steps').html()+'<div id="technical_error_feedback" style="display:none;" class="error"><img src="'+shopImporter.srcError+'">TECHNICAL ERROR<br><br>Details: '+XMLHttpRequest.responseText+'</div>');
+	       		$('#steps').html($('#steps').html()+'<div id="technical_error_feedback" style="display:none;" class="error alert-box radius"><img src="'+shopImporter.srcError+'">TECHNICAL ERROR<br><br>Details: '+XMLHttpRequest.responseText+'</div>');
 	       		$('#technical_error_feedback').fadeIn('slow');
 	       		$('#checkAndSaveConfig').fadeIn('slow');
 	       }
@@ -582,7 +582,7 @@ var shopImporter = {
 		}
 		else
 		{
-			$('#steps').html($('#steps').html()+'<div id="technical_error_feedback" style="display:none;" class="error"><img src="'+shopImporter.srcError+'">'+importHasErrors+'</div>');
+			$('#steps').html($('#steps').html()+'<div id="technical_error_feedback" style="display:none;" class="error alert-box radius"><img src="'+shopImporter.srcError+'">'+importHasErrors+'</div>');
 			$('#technical_error_feedback').fadeIn('slow');
 		}
 		$('#checkAndSaveConfig').fadeIn('slow');

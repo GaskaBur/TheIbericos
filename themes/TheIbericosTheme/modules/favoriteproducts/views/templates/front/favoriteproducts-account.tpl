@@ -58,7 +58,7 @@ $('document').ready(function()
 		{l s='My account' mod='favoriteproducts'}</a>
 		<span class="navigation-pipe">{$navigationPipe}</span>{l s='My favorite products' mod='favoriteproducts'}
 {/capture}
-{include file="$tpl_dir./breadcrumb.tpl"}
+{*include file="$tpl_dir./breadcrumb.tpl"*}
 
 <div id="favoriteproducts_block_account">
 	<h3>{l s='My favorite products' mod='favoriteproducts'}</h3>
@@ -78,7 +78,7 @@ $('document').ready(function()
 			{/foreach}
 		</div>
 	{else}
-		<p class="warning">{l s='No favorite products yet.' mod='favoriteproducts'}</p>
+		<p class="alert-box alert">{l s='No favorite products yet.' mod='favoriteproducts'}</p>
 	{/if}
 	<div class="clear"></div>
 	<ul class="footer_links">

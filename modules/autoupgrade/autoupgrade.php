@@ -150,7 +150,7 @@ class Autoupgrade extends Module
 		if (version_compare(_PS_VERSION_, '1.5.0.0 ', '>='))
 			$this->_errors[] = $error;
 		else
-			echo '<div class="error">'.strip_tags($error).'</div>';
+			echo '<div class="error alert-box radius">'.strip_tags($error).'</div>';
 
 		return false;
 	}

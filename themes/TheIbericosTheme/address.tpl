@@ -67,7 +67,7 @@ $(function(){ldelim}
 </script>
 
 {capture name=path}{l s='Your addresses'}{/capture}
-{include file="$tpl_dir./breadcrumb.tpl"}
+{*include file="$tpl_dir./breadcrumb.tpl"*}
 
 <h3>{l s='Your addresses'}</h3>
 

@@ -24,12 +24,12 @@
 *}
 
 {capture name=path}<a href="{$link->getPageLink('my-account', true)}">{l s='My account'}</a><span class="navigation-pipe">{$navigationPipe}</span>{l s='Return Merchandise Authorization (RMA)'}{/capture}
-{include file="$tpl_dir./breadcrumb.tpl"}
+{*include file="$tpl_dir./breadcrumb.tpl"*}
 
 <h1>{l s='Return Merchandise Authorization (RMA)'}</h1>
-{if isset($errorQuantity) && $errorQuantity}<p class="error">{l s='You do not have enough products to request another merchandise return.'}</p>{/if}
+{if isset($errorQuantity) && $errorQuantity}<p class="error alert-box radius">{l s='You do not have enough products to request another merchandise return.'}</p>{/if}
 {if isset($errorMsg) && $errorMsg}
-	<p class="error">
+	<p class="error alert-box radius">
 		{l s='Please provide an explanation for your RMA.'}
 	</p>
 	<p>
@@ -49,9 +49,9 @@
 		</form>
 	</p>
 {/if}
-{if isset($errorDetail1) && $errorDetail1}<p class="error">{l s='Please check at least one product you would like to return.'}</p>{/if}
-{if isset($errorDetail2) && $errorDetail2}<p class="error">{l s='Please provide a quantity for the product you checked.'}</p>{/if}
-{if isset($errorNotReturnable) && $errorNotReturnable}<p class="error">{l s='This order cannot be returned.'}</p>{/if}
+{if isset($errorDetail1) && $errorDetail1}<p class="error alert-box radius">{l s='Please check at least one product you would like to return.'}</p>{/if}
+{if isset($errorDetail2) && $errorDetail2}<p class="error alert-box radius">{l s='Please provide a quantity for the product you checked.'}</p>{/if}
+{if isset($errorNotReturnable) && $errorNotReturnable}<p class="error alert-box radius">{l s='This order cannot be returned.'}</p>{/if}
 
 <p>{l s='Here are the merchandise returns you have made'}.</p>
 <div class="block-center" id="block-history">
@@ -87,7 +87,7 @@
 	</table>
 	<div id="block-order-detail" class="hidden">&nbsp;</div>
 	{else}
-		<p class="warning">{l s='You have no return merchandise authorizations.'}</p>
+		<p class="alert-box alert">{l s='You have no return merchandise authorizations.'}</p>
 	{/if}
 </div>
 

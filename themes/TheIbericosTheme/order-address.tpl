@@ -159,7 +159,7 @@
 
 {if !$opc}
 {capture name=path}{l s='Addresses'}{/capture}
-{include file="$tpl_dir./breadcrumb.tpl"}
+{*include file="$tpl_dir./breadcrumb.tpl"*}
 {/if}
 
 {if !$opc}<h3>{l s='Addresses'}</h3>{else}<h3><span>1</span> {l s='Addresses'}</h3>{/if}

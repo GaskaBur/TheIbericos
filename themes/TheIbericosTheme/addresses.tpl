@@ -87,7 +87,7 @@
 </script>
 
 {capture name=path}<a href="{$link->getPageLink('my-account', true)}">{l s='My account'}</a><span class="navigation-pipe">{$navigationPipe}</span>{l s='My addresses'}{/capture}
-{include file="$tpl_dir./breadcrumb.tpl"}
+{*include file="$tpl_dir./breadcrumb.tpl"*}
 
 <h3>{l s='My addresses'}</h3>
 <p>{l s='Please configure your default billing and delivery addresses when placing an order. You may also add additional addresses, which can be useful for sending gifts or receiving an order at your office.'}</p>
@@ -119,7 +119,7 @@
 	<p class="clear" />
 </div>
 {else}
-	<p class="warning">{l s='No addresses available.'}&nbsp;<a href="{$link->getPageLink('address', true)}">{l s='Add new address'}</a></p>
+	<p class="alert-box alert">{l s='No addresses available.'}&nbsp;<a href="{$link->getPageLink('address', true)}">{l s='Add new address'}</a></p>
 {/if}
 
 <div class="clear address_add"><a href="{$link->getPageLink('address', true)}" title="{l s='Add an address'}" class="button_large button">{l s='Add an address'}</a></div>

@@ -70,7 +70,7 @@
 
 {if !$opc}
 	{capture name=path}{l s='Shipping'}{/capture}
-	{include file="$tpl_dir./breadcrumb.tpl"}
+	{*include file="$tpl_dir./breadcrumb.tpl"*}
 {/if}
 
 {if !$opc}
@@ -110,7 +110,7 @@
 		{/if}
 	</div>
 	{if isset($isVirtualCart) && $isVirtualCart}
-		<p class="warning">{l s='No carrier needed for this order'}</p>
+		<p class="alert-box alert">{l s='No carrier needed for this order'}</p>
 	{else}
 		{if $recyclablePackAllowed}
 			<p class="checkbox">
@@ -220,7 +220,7 @@
 			</div>
 			<div class="hook_extracarrier" id="HOOK_EXTRACARRIER_{$id_address}">{if isset($HOOK_EXTRACARRIER_ADDR) &&  isset($HOOK_EXTRACARRIER_ADDR.$id_address)}{$HOOK_EXTRACARRIER_ADDR.$id_address}{/if}</div>
 			{foreachelse}
-			<p class="warning" id="noCarrierWarning">
+			<p class="alert-box alert" id="noCarrierWarning">
 				{foreach $cart->getDeliveryAddressesWithoutCarriers(true) as $address}
 					{if empty($address->alias)}
 						{l s='No carriers available.'}

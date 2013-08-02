@@ -53,7 +53,7 @@
 			</ul>
 		</form>
 		{else}
-		<p class="warning">{l s='No addresses available.'}</p>
+		<p class="alert-box alert">{l s='No addresses available.'}</p>
 	{/if}
 		<a href="{$link->getPageLink('address', true)}" data-role="button" data-theme="a" data-ajax="false">{l s='Add new address'}</a>
 	</div>

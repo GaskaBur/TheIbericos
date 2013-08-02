@@ -59,7 +59,7 @@
 		
 		{include file='./sitemap.tpl'}
 	{elseif $category->id}
-		<p class="warning">{l s='This category is currently unavailable.'}</p>
+		<p class="alert-box alert">{l s='This category is currently unavailable.'}</p>
 	{/if}
 	</div><!-- #content -->
 {/if}

@@ -24,7 +24,7 @@
 *}
 
 {capture name=path}{l s='Your shopping cart'}{/capture}
-{include file="$tpl_dir./breadcrumb.tpl"}
+{*include file="$tpl_dir./breadcrumb.tpl"*}
 
 <h3 id="cart_title">{l s='Shopping cart summary'}</h3>
 
@@ -38,9 +38,9 @@
 {include file="$tpl_dir./errors.tpl"}
 
 {if isset($empty)}
-	<p class="warning">{l s='Your shopping cart is empty.'}</p>
+	<p class="alert-box alert">{l s='Your shopping cart is empty.'}</p>
 {elseif $PS_CATALOG_MODE}
-	<p class="warning">{l s='This store has not accepted your new order.'}</p>
+	<p class="alert-box alert">{l s='This store has not accepted your new order.'}</p>
 {else}
 	<script type="text/javascript">
 	// <![CDATA[
@@ -53,7 +53,7 @@
 	var deliveryAddress = {$cart->id_address_delivery|intval};
 	// ]]>
 	</script>
-	<p style="display:none" id="emptyCartWarning" class="warning">{l s='Your shopping cart is empty.'}</p>
+	<p style="display:none" id="emptyCartWarning" class="alert-box alert">{l s='Your shopping cart is empty.'}</p>
 <!--{if isset($lastProductAdded) AND $lastProductAdded}
 	<div class="cart_last_product">
 		<div class="cart_last_product_header">
@@ -176,7 +176,7 @@
 				<td colspan="5" id="cart_voucher" class="cart_voucher">
 				{if $voucherAllowed}
 					{if isset($errors_discount) && $errors_discount}
-						<ul class="error">
+						<ul class="error alert-box radius">
 						{foreach $errors_discount as $k=>$error}
 							<li>{$error|escape:'htmlall':'UTF-8'}</li>
 						{/foreach}

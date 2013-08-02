@@ -31,7 +31,7 @@
 
 	<p>{l s='Here are the orders you have placed since the creation of your account'}.</p>
 
-	{if $slowValidation}<p class="warning">{l s='If you have just placed an order, it may take a few minutes for it to be validated. Please refresh this page if your order is missing.'}</p>{/if}
+	{if $slowValidation}<p class="alert-box alert">{l s='If you have just placed an order, it may take a few minutes for it to be validated. Please refresh this page if your order is missing.'}</p>{/if}
 
 	<div class="block-center" id="block-history">
 		{if $orders && count($orders)}
@@ -56,7 +56,7 @@
 		{/foreach}
 		</ul>
 		{else}
-			<p class="warning">{l s='You have not placed any orders.'}</p>
+			<p class="alert-box alert">{l s='You have not placed any orders.'}</p>
 		{/if}
 	</div>
 

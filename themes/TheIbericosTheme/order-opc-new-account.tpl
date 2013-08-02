@@ -7,7 +7,7 @@
 			<p><a href="#" id="openLoginFormBlock">&raquo; {l s='Click here'}</a></p>
 			<div id="login_form_content" style="display:none;">
 				<!-- Error return block -->
-				<div id="opc_login_errors" class="error" style="display:none;"></div>
+				<div id="opc_login_errors" class="error alert-box radius" style="display:none;"></div>
 				<!-- END Error return block -->
 				<div style="margin-left:40px;margin-bottom:5px;float:left;width:40%;">
 					<label for="login_email">{l s='E-mail address'}</label>
@@ -102,7 +102,7 @@
 				{/if}
 				</script>
 				<!-- Error return block -->
-				<div id="opc_account_errors" class="error" style="display:none;"></div>
+				<div id="opc_account_errors" class="error alert-box radius" style="display:none;"></div>
 				<!-- END Error return block -->
 				<!-- Account -->
 				<input type="hidden" id="is_new_customer" name="is_new_customer" value="0" />

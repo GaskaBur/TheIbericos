@@ -32,12 +32,12 @@
 </script>
 
 {capture name=path}<a href="{$link->getPageLink('my-account', true)}">{l s='My account' mod='referralprogram'}</a><span class="navigation-pipe">{$navigationPipe}</span>{l s='Referral Program' mod='referralprogram'}{/capture}
-{include file="$tpl_dir./breadcrumb.tpl"}
+{*include file="$tpl_dir./breadcrumb.tpl"*}
 
 <h2>{l s='Referral program' mod='referralprogram'}</h2>
 
 {if $error}
-	<p class="error">
+	<p class="error alert-box radius">
 		{if $error == 'conditions not valided'}
 			{l s='You need to agree to the conditions of the referral program!' mod='referralprogram'}
 		{elseif $error == 'email invalid'}
@@ -134,7 +134,7 @@
 				</p>
 			</form>
 		{else}
-			<p class="warning">
+			<p class="alert-box alert">
 				{l s='To become a sponsor, you need to have completed at least' mod='referralprogram'} {$orderQuantity} {if $orderQuantity > 1}{l s='orders' mod='referralprogram'}{else}{l s='order' mod='referralprogram'}{/if}.
 			</p>
 		{/if}
@@ -177,7 +177,7 @@
 			</p>
 		</form>
 		{else}
-			<p class="warning">{l s='You have not sponsored any friends.' mod='referralprogram'}</p>
+			<p class="alert-box alert">{l s='You have not sponsored any friends.' mod='referralprogram'}</p>
 		{/if}
 	</div>
 
@@ -209,7 +209,7 @@
 		</tbody>
 		</table>
 	{else}
-		<p class="warning">
+		<p class="alert-box alert">
 			{l s='No sponsored friends have accepted your invitation yet.' mod='referralprogram'}
 		</p>
 	{/if}

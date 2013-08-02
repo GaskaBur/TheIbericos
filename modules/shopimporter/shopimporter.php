@@ -344,7 +344,7 @@ class shopimporter extends ImportModule
 				else
 					$html .= '<div class="warn" ><img src="../img/admin/warn2.png">'.$this->l('No import module installed').'</div>';
 				$html .= '
-					<div style="display:none;" class="error" id="connectionInformation"></div>
+					<div style="display:none;" class="error alert-box radius" id="connectionInformation"></div>
 					<div id="config_connector"></div>
 						<div class="margin-form">
 						<input type="submit" name="displayOptions" id="displayOptions" class="button" value="'.$this->l('Next Step').'">
@@ -404,7 +404,7 @@ class shopimporter extends ImportModule
 							<hr>
 							<div style="display:none" id="specificOptions">
 							<h2>'.$this->l('Specific Options').'</h2>
-								<div style="display:none" class="error" id="specificOptionsErrors"></div>
+								<div style="display:none" class="error alert-box radius" id="specificOptionsErrors"></div>
 								<div id="specificOptionsContent">
 								</div>
 							</div>

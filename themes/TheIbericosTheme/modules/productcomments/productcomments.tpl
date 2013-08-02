@@ -99,7 +99,7 @@ var productcomments_url_rewrite = '{$productcomments_url_rewriting_activated}';
 			<div class="new_comment_form_content">
 				<h2>{l s='Write your review' mod='productcomments'}</h2>
 
-				<div id="new_comment_form_error" class="error" style="display: none;">
+				<div id="new_comment_form_error" class="error alert-box radius" style="display: none;">
 					<ul></ul>
 				</div>
 

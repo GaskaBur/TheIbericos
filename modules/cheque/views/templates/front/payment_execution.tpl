@@ -24,7 +24,7 @@
 *}
 
 {capture name=path}{l s='Cheque payment' mod='cheque'}{/capture}
-{include file="$tpl_dir./breadcrumb.tpl"}
+{*include file="$tpl_dir./breadcrumb.tpl"*}
 
 <h2>{l s='Order summary' mod='cheque'}</h2>
 
@@ -32,7 +32,7 @@
 {include file="$tpl_dir./order-steps.tpl"}
 
 {if isset($nbProducts) && $nbProducts <= 0}
-	<p class="warning">{l s='Your shopping cart is empty.'}</p>
+	<p class="alert-box alert">{l s='Your shopping cart is empty.'}</p>
 {else}
 
 <h3>{l s='Cheque payment' mod='cheque'}</h3>

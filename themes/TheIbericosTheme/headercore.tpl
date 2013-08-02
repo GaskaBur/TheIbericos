@@ -28,6 +28,11 @@
 
 	                </div>
 				</div>
+				{if isset($product)} {* <-- Si estamos en la ficha de producto, nos comemos el Hook_left *}
+				<div class="web-main large-12 columns"> 
+                                    
+                    <div class="web-main-content row" id="center_column">
+				{else}
                 <div class="web-sidebar large-3 columns">
                     <aside class="web-aside row">
                         {$HOOK_LEFT_COLUMN}  <!-- Recomendable que todos sean large-12 ;) -->                      
@@ -36,4 +41,5 @@
 
                 <div class="web-main large-9 columns">  
                                     
-                    <div class="web-main-content row" id="center_column">               
+                    <div class="web-main-content row" id="center_column">
+                {/if}               

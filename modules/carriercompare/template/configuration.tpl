@@ -1,6 +1,6 @@
 {if isset($display_error)}
 	{if $display_error}
-		<div class="error">{l s='An error occured during the form validation' mod='carriercompare'}</div>
+		<div class="error alert-box radius">{l s='An error occured during the form validation' mod='carriercompare'}</div>
 	{else}
 		<div class="conf">{l s='Configuration updated' mod='carriercompare'}</div>
 	{/if}

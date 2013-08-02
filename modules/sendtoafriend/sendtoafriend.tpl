@@ -25,7 +25,7 @@
 *}
 
 {capture name=path}{l s='Send to a friend' mod='sendtoafriend'}{/capture}
-{include file="$tpl_dir./breadcrumb.tpl"}
+{*include file="$tpl_dir./breadcrumb.tpl"*}
 <div id="sendfriendpage">
 	<h1>{l s='Send to a friend' mod='sendtoafriend'}</h1>
 

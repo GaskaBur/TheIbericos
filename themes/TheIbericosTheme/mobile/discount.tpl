@@ -80,7 +80,7 @@
 		*{l s='Tax included'}
 	</p>
 	{else}
-		<p class="warning">{l s='You do not possess any vouchers.'}</p>
+		<p class="alert-box alert">{l s='You do not possess any vouchers.'}</p>
 	{/if}
 	
 </div><!-- /content -->

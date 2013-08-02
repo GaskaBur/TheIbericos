@@ -57,7 +57,7 @@ $('document').ready(function()
 </script>
 
 {capture name=path}<a href="{$link->getPageLink('my-account', true)}">{l s='My account' mod='mailalerts'}</a><span class="navigation-pipe">{$navigationPipe}</span>{l s='My alerts' mod='mailalerts'}{/capture}
-{include file="$tpl_dir./breadcrumb.tpl"}
+{*include file="$tpl_dir./breadcrumb.tpl"*}
 
 <div id="mailalerts_block_account">
 	<h2>{l s='My alerts' mod='mailalerts'}</h2>
@@ -76,7 +76,7 @@ $('document').ready(function()
 			{/foreach}
 		</div>
 	{else}
-		<p class="warning">{l s='No mail alerts yet.' mod='mailalerts'}</p>
+		<p class="alert-box alert">{l s='No mail alerts yet.' mod='mailalerts'}</p>
 	{/if}
 
 	<ul class="footer_links">

@@ -24,7 +24,7 @@
 *}
 
 {capture name=path}{l s='Bank wire payment' mod='bankwire'}{/capture}
-{include file="$tpl_dir./breadcrumb.tpl"}
+{*include file="$tpl_dir./breadcrumb.tpl"*}
 
 <h2>{l s='Order summary' mod='bankwire'}</h2>
 
@@ -32,7 +32,7 @@
 {include file="$tpl_dir./order-steps.tpl"}
 
 {if $nbProducts <= 0}
-	<p class="warning">{l s='Your shopping cart is empty.' mod='bankwire'}</p>
+	<p class="alert-box alert">{l s='Your shopping cart is empty.' mod='bankwire'}</p>
 {else}
 
 <h3>{l s='Bank wire payment' mod='bankwire'}</h3>

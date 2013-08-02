@@ -23,7 +23,7 @@
 *  International Registered Trademark & Property of PrestaShop SA
 *}
 {if ($content_only == 0)}
-	{include file="$tpl_dir./breadcrumb.tpl"}
+	{*include file="$tpl_dir./breadcrumb.tpl"*}
 {/if}
 {if isset($cms) && !isset($cms_category)}
 	{if !$cms->active}
@@ -70,7 +70,7 @@
 		{/if}
 	</div>
 {else}
-	<div class="error">
+	<div class="error alert-box radius">
 		{l s='This page does not exist.'}
 	</div>
 {/if}

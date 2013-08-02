@@ -27,11 +27,11 @@
 	{include file="$tpl_dir./modules/paypal/views/templates/front/error.tpl"}
 {else}
 	{capture name=path}<a href="order.php">{l s='Your shopping cart' mod='paypal'}</a><span class="navigation-pipe"> {$navigationPipe} </span> {l s='PayPal' mod='paypal'}{/capture}
-	{include file="$tpl_dir./breadcrumb.tpl"}
+	{*include file="$tpl_dir./breadcrumb.tpl"*}
 
 	<h2>{$message}</h2>
 	{if isset($logs) && $logs}
-		<div class="error">
+		<div class="error alert-box radius">
 			<p><b>{l s='Please try to contact the merchant:' mod='paypal'}</b></p>
 			
 			<ol>

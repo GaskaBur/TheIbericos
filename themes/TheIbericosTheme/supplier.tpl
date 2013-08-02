@@ -23,7 +23,7 @@
 *  International Registered Trademark & Property of PrestaShop SA
 *}
 
-{include file="$tpl_dir./breadcrumb.tpl"}
+{*include file="$tpl_dir./breadcrumb.tpl"*}
 
 {include file="$tpl_dir./errors.tpl"}
 
@@ -56,6 +56,6 @@
 		{include file="./pagination.tpl"}
 	</div>
 	{else}
-	<p class="warning">{l s='No products for this manufacturer.'}</p>
+	<p class="alert-box alert">{l s='No products for this manufacturer.'}</p>
 	{/if} 
 {/if}

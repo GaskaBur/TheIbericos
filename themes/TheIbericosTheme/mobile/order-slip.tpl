@@ -49,7 +49,7 @@
 			</ul>
 		<div id="block-order-detail" class="hidden">&nbsp;</div>
 		{else}
-			<p class="warning">{l s='You have not received any credit slips.'}</p>
+			<p class="alert-box alert">{l s='You have not received any credit slips.'}</p>
 		{/if}
 	</div>
 </div><!-- /content -->

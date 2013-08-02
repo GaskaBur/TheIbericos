@@ -27,7 +27,7 @@
 {include file='./page-title.tpl'}
 
 {if $PS_CATALOG_MODE}
-	<p class="warning">{l s='This store does not accept order.'}</p>
+	<p class="alert-box alert">{l s='This store does not accept order.'}</p>
 {else}
 
 <script type="text/javascript">
@@ -99,7 +99,7 @@
 		
 	{* else : warning *}
 	{else}
-		<p class="warning">{l s='Your shopping cart is empty.'}</p>
+		<p class="alert-box alert">{l s='Your shopping cart is empty.'}</p>
 	{/if}
 	
 {/if}

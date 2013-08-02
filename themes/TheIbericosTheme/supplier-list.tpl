@@ -24,7 +24,7 @@
 *}
 
 {capture name=path}{l s='Suppliers'}{/capture}
-{include file="$tpl_dir./breadcrumb.tpl"}
+{*include file="$tpl_dir./breadcrumb.tpl"*}
 
 <h1>{l s='Suppliers'}</h1>
 

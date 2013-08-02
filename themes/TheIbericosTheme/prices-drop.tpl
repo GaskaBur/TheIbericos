@@ -49,5 +49,5 @@
 		{include file="./pagination.tpl"}
 	</div>
 	{else}
-	<p class="warning">{l s='No price drop.'}</p>
+	<p class="alert-box alert">{l s='No price drop.'}</p>
 {/if}
