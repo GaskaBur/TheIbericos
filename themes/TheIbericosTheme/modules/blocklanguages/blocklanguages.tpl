@@ -25,27 +25,29 @@
 
 <!-- Block languages module -->
 {if count($languages) > 1}
-	<div id="languages_block_top" class="web-modulo large-12 columns">
+	<div id="languages_block_top" class="web-modulo large-2 columns">
+	
 		<div id="countries">
 			{* @todo fix display current languages, removing the first foreach loop *}
 			{foreach from=$languages key=k item=language name="languages"}
 				{if $language.iso_code == $lang_iso}
-					<p class="selected_language">
-						<img src="{$img_lang_dir}{$language.id_lang}.jpg" alt="{$language.iso_code}" width="16" height="11" />
-					</p>
+					<div class="selected_language" >						
+						<img src="{$img_lang_dir}{$language.id_lang}.jpg" alt="{$language.iso_code}" title="{$language.name}" />
+						<span>{l s='Select your language' mod='blocklanguages'}</span>
+					</div>
 				{/if}
 			{/foreach}
-			<nav>
-				<ul id="first-languages" class="">
+			<nav class="web-menu">
+				<ul id="first-languages" class="countries_ul">
 				{foreach from=$languages key=k item=language name="languages"}
 					<li class="">			
 						{assign var=indice_lang value=$language.id_lang}
 						{if isset($lang_rewrite_urls.$indice_lang)}
-							<a href="{$lang_rewrite_urls.$indice_lang|escape:htmlall}" title="{$language.name}">
+							<a href="{$lang_rewrite_urls.$indice_lang|escape:htmlall}" title="{l s='Change to' mod='blocklanguages'} {$language.name}">
 						{else}
-							<a href="{$link->getLanguageLink($language.id_lang)|escape:htmlall}" title="{$language.name}">
+							<a href="{$link->getLanguageLink($language.id_lang)|escape:htmlall}" title="{l s='Change to' mod='blocklanguages'} {$language.name}">
 						{/if}			
-							<img src="{$img_lang_dir}{$language.id_lang}.jpg" alt="{$language.iso_code}" width="50" height="45" />			
+							<img src="{$img_lang_dir}{$language.id_lang}.jpg" alt="{$language.iso_code}" />	<span>{$language.name}</span>		
 						</a>
 					
 					</li>

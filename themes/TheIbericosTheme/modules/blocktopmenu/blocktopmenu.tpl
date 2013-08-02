@@ -1,7 +1,9 @@
 {if $MENU != ''}
 	
 	<!-- Menu -->
-	<div class="web-modulo large-12 columns">
+
+	<div id="blocktopmenu" class="web-modulo large-12 columns">
+		<nav class="web-menu horizontal row">
 		<ul>
 			{$MENU}
 			{if $MENU_SEARCH}
@@ -17,8 +19,10 @@
 				</li>
 			{/if}
 		</ul>
+		</nav>
 	</div>
-	<div class="sf-right">&nbsp;</div>
+	<!-- <div class="sf-right">&nbsp;</div> -->
+	
 
 	<!--/ Menu -->
 {/if}

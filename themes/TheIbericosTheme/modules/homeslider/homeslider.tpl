@@ -26,7 +26,7 @@
 
 <!-- Module HomeSlider -->
 {if isset($homeslider)}
-<div class="web-modulo large-8 columns">
+<div class="web-modulo homeslider-container large-8 columns">
 <script type="text/javascript">
 {if isset($homeslider_slides) && $homeslider_slides|@count > 1}
 	{if $homeslider.loop == 1}

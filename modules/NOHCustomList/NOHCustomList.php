@@ -39,7 +39,8 @@ class NOHCustomList extends Module
 		$lista = array();
 		if (Configuration::get('NOHHF_Productos') != "")
 			$lista = explode("|", Configuration::get('NOHHF_Productos'));
-		
+		$category = new Category();
+		$cat = $category->searchByName(2,'The Ibéricos Select');
 		if (count($lista > 0))
 		{
 			global $smarty;
@@ -47,7 +48,7 @@ class NOHCustomList extends Module
 			foreach ($lista as $p ) {
 				$pr[] = new Product($p);
 			}
-			$this->context->smarty->assign(array("pr" => $pr));
+			$this->context->smarty->assign(array("pr" => $pr, "cat" => $cat[0]['id_category']));
 			return $this->display(__FILE__, 'NOHCustomList.tpl');
 
 		}

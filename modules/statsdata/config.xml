@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8" ?>
         <module>
             <name>statsdata</name>
-            <displayName><![CDATA[Data mining for statistics]]></displayName>
+            <displayName><![CDATA[Explotaci&oacute;n de datos para las estad&iacute;sticas]]></displayName>
             <version><![CDATA[1]]></version>
-            <description><![CDATA[This module must be enabled if you want to use Statistics.]]></description>
+            <description><![CDATA[Este m&oacute;dulo debe estar activado si usted quiere utilizar las estad&iacute;sticas]]></description>
             <author><![CDATA[PrestaShop]]></author>
             <tab><![CDATA[analytics_stats]]></tab>
             <is_configurable>1</is_configurable>

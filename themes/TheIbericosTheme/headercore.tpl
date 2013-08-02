@@ -1,52 +1,39 @@
 <body {if isset($page_name)}id="{$page_name|escape:'htmlall':'UTF-8'}"{/if} class="{if $hide_left_column}hide-left-column{/if}{if $hide_right_column}hide-right-column{/if}{if $content_only}content_only{/if}">
-  
+  	{if isset($restricted_country_mode) && $restricted_country_mode}
+		<div id="restricted-country">
+			<p>{l s='You cannot place a new order from your country.'} <span class="bold">{$geolocation_country}</span></p>
+		</div>
+	{/if}
     <div class="web-wrap">
         <div class="web-wrap2">
             <div class="web-container row">
+            	<div class="large-3 columns">
+	            	<header class="web-main-header row">
+	                    <a id="header_logo" href="{$base_dir}" title="{$shop_name|escape:'htmlall':'UTF-8'}">
+	                        <img class="logo" src="{$logo_url}" alt="{$shop_name|escape:'htmlall':'UTF-8'}" {if $logo_image_width}width="{$logo_image_width}"{/if} {if $logo_image_height}height="{$logo_image_height}" {/if} />
+	                        <h2 class="web-site-title">{$shop_name|escape:'htmlall':'UTF-8'}</h2>
+	                    </a>
+	                    <h5 class="web-site-tagline">{l s='The Shop Online'}</h5>
+	
+	                </header>
+            	</div> 
+				<div class="htop large-9 columns ">
+					<div class="row">  
+	                	{$HOOK_TOP} <!-- Cualquier combinación de módulos mientras sumen large-12 ;) -->
+	                </div>
+				</div>
+				<div class="hright large-12 columns">
+	                <div class=" row">         
+	                    {$HOOK_RIGHT_COLUMN} <!-- Cualquier combinación de módulos mientras sumen large-12 ;) -->
 
+	                </div>
+				</div>
                 <div class="web-sidebar large-3 columns">
-                    <header class="web-main-header row">
-                        <a id="header_logo" href="{$base_dir}" title="{$shop_name|escape:'htmlall':'UTF-8'}">
-                            <img class="logo" src="{$logo_url}" alt="{$shop_name|escape:'htmlall':'UTF-8'}" {if $logo_image_width}width="{$logo_image_width}"{/if} {if $logo_image_height}height="{$logo_image_height}" {/if} />
-                            <h1 class="web-site-title">The Ibéricos</h1>
-                        </a>
-                        <h5 class="web-site-tagline">Tu tienda de ibéricos online</h5>
-
-                    </header> 
                     <aside class="web-aside row">
-                        {$HOOK_LEFT_COLUMN}
-                        <!-- Cada móudlo en anclado a Hook left debe llevar esta estructura.
-                        <div class="web-modulo large-12 columns">
-                        1
-                        </div>              
-                        -->
+                        {$HOOK_LEFT_COLUMN}  <!-- Recomendable que todos sean large-12 ;) -->                      
                     </aside>    
                 </div>
 
-                <div class="web-main large-9 columns">     
-                    <div class="htop row">  
-                        {$HOOK_TOP}
-                        <!--
-                        <div class="web-modulo large-4 columns">
-                        1
-                        </div>
-                        -->
-                    </div>
-                    <div class="hright row">         
-                        {$HOOK_RIGHT_COLUMN}
-                        <!--
-                        <div class="web-modulo large-8 columns">
-                        1
-                        </div>
-                        <div class="web-modulo large-4 columns">
-                        2
-                        </div>
-                        <div class="web-modulo large-12 columns">
-                        3
-                        </div>
-                        -->
-                    </div>
-
-
-                    
+                <div class="web-main large-9 columns">  
+                                    
                     <div class="web-main-content row" id="center_column">               

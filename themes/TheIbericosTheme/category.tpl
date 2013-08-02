@@ -1,5 +1,5 @@
 {*
-* 2007-2012 PrestaShop
+* 2007-2013 PrestaShop
 *
 * NOTICE OF LICENSE
 *
@@ -18,42 +18,52 @@
 * needs please refer to http://www.prestashop.com for more information.
 *
 *  @author PrestaShop SA <contact@prestashop.com>
-*  @copyright  2007-2012 PrestaShop SA
+*  @copyright  2007-2013 PrestaShop SA
 *  @license    http://opensource.org/licenses/afl-3.0.php  Academic Free License (AFL 3.0)
 *  International Registered Trademark & Property of PrestaShop SA
 *}
 
-{include file="$tpl_dir./breadcrumb.tpl"}
+{*include file="$tpl_dir./breadcrumb.tpl"*}
 {include file="$tpl_dir./errors.tpl"}
 
 {if isset($category)}
 	{if $category->id AND $category->active}
-<!--	<h1>
+	<article class="large-12 columns prod-category">
+    	<h2>
+    		{strip}
+				{$category->name|escape:'htmlall':'UTF-8'}
+				{if isset($categoryNameComplement)}
+					{$categoryNameComplement|escape:'htmlall':'UTF-8'}
+				{/if}
+			{/strip}
+		</h2>
+        <h6>{$category->description}</h6>
+		<!--<h1>
 			{strip}
 				{$category->name|escape:'htmlall':'UTF-8'}
 				{if isset($categoryNameComplement)}
 					{$categoryNameComplement|escape:'htmlall':'UTF-8'}
 				{/if}
 			{/strip}
-		</h1>
+		</h1-->
 		
-		<div class="resumecat category-product-count">
+		<!--div class="resumecat category-product-count">
 			{include file="$tpl_dir./category-count.tpl"}
-		</div>
+		</div -->
 		
-		{if $scenes || $category->description || $category->id_image}
+		{*if $scenes || $category->description || $category->id_image}
 		<div class="content_scene_cat">
 			{if $scenes}
-				<!-- Scenes 
+				<!-- Scenes -->
 				{include file="$tpl_dir./scenes.tpl" scenes=$scenes}
 			{else}
-				<!-- Category image 
+				<!-- Category image -->
 				{if $category->id_image}
 				<div class="align_center">
 					<img src="{$link->getCatImageLink($category->link_rewrite, $category->id_image, 'category_default')}" alt="{$category->name|escape:'htmlall':'UTF-8'}" title="{$category->name|escape:'htmlall':'UTF-8'}" id="categoryImage" width="{$categorySize.width}" height="{$categorySize.height}" />
 				</div>
 				{/if}
-			{/if}-->
+			{/if}
 
 			{if $category->description}
 				<div class="cat_desc">
@@ -66,10 +76,10 @@
 				{/if}
 				</div>
 			{/if}
-		<!--</div>
-		{/if}
-		{if isset($subcategories)}
-		<!-- Subcategories --
+		</div>
+		{/if*}
+		{* if isset($subcategories)}
+		<!-- Subcategories -->
 		<div id="subcategories">
 			<h3>{l s='Subcategories'}</h3>
 			<ul class="inline_list">
@@ -91,26 +101,32 @@
 			</ul>
 			<br class="clear"/>
 		</div>
-		{/if}-->
+		{/if *}
 
 		{if $products}
-			<div class="content_sortPagiBar large-12 columns  row">
-                	{include file="./product-sort.tpl"}
-                    {include file="$tpl_dir./pagination.tpl"}
-                    {include file="$tpl_dir./nbr-product-page.tpl"}
+			<div class="content_sortPagiBar">
+				{include file="$tpl_dir./pagination.tpl"}
+				<div class="sortPagiBar clearfix">
+					{include file="./product-sort.tpl"}
+					{*include file="./product-compare.tpl"*}
+					{include file="./nbr-product-page.tpl"}
+				</div>
 			</div>
 			
 			{include file="./product-list.tpl" products=$products}
 			
-			<div class="content_sortPagiBar large-12 columns row ">
-                	{include file="./product-sort.tpl"}
-                    {include file="$tpl_dir./pagination.tpl"}
-                    {include file="$tpl_dir./nbr-product-page.tpl"}
+			<div class="content_sortPagiBar">
+				<div class="sortPagiBar clearfix">
+					{include file="./product-sort.tpl"}
+					{*include file="./product-compare.tpl"*}
+					{include file="./nbr-product-page.tpl"}
+				</div>
+				{include file="./pagination.tpl"}
 			</div>
-		{else}
-        	<div class="noprod">No hay productos en estos momentos.</div>
-        {/if}
+		{/if}
+		</article>
 	{elseif $category->id}
 		<p class="warning">{l s='This category is currently unavailable.'}</p>
 	{/if}
+
 {/if}

@@ -36,8 +36,11 @@ var ajaxCart = {
 		//for every 'add' buttons...
 		$('.ajax_add_to_cart_button').unbind('click').click(function(){
 			var idProduct =  $(this).attr('rel').replace('ajax_id_product_', '');
+			var cuantos = document.getElementById('cuantosQuieres_'+idProduct).value;
+			if (cuantos < 1)
+				cuantos = 1;
 			if ($(this).attr('disabled') != 'disabled')
-				ajaxCart.add(idProduct, null, false, this);
+				ajaxCart.add(idProduct, null, false, this,cuantos);
 			return false;
 		});
 		//for product page 'add' button...
@@ -206,7 +209,7 @@ var ajaxCart = {
 					WishlistAddProductCart(whishlist[0], idProduct, idCombination, whishlist[1]);
 
 				// add the picture to the cart
-				var $element = $(callerElement).parent().parent().find('a.product_image img,a.product_img_link img');
+				var $element = $(callerElement).parent().parent().parent().find('a.product_image img,a.product_img_link img');
 				if (!$element.length)
 					$element = $('#bigpic');
 				var $picture = $element.clone();
@@ -692,7 +695,7 @@ $(document).ready(function(){
 			$('#shopping_cart a').css('border-radius', '3px');
 			setTimeout(function() {
 				if (!shopping_cart.isHoveringOver())
-					$("#header #cart_block").stop(true, true).slideUp(450);
+					$("#cart_block").stop(true, true).slideUp(450);
 			}, 200);
 		}
 	);

@@ -26,23 +26,32 @@
 <!-- Block user information module HEADER -->
 
 <div id="header_user">
-	<div class="web-modulo large-4 columns">
-	<p id="header_user_info">
-<!--		{l s='Welcome' mod='blockuserinfo'}  {$cookie->customer_firstname} {$cookie->customer_lastname}
--->		{if $logged}
-			<a href="{$link->getPageLink('my-account', true)}" title="{l s='View my customer account' mod='blockuserinfo'}" class="account" rel="nofollow"><span>Mi cuenta</span></a>
-			<a href="{$link->getPageLink('index', true, NULL, "mylogout")}" title="{l s='Log me out' mod='blockuserinfo'}" title="{l s='Log out' mod='blockuserinfo'}" class="button" rel="nofollow">{l s='Log out' mod='blockuserinfo'}</a>
-		{else}
-			<span class="acceder">Acceda a <br/>su cuenta »</span><a href="{$link->getPageLink('my-account', true)}" title="{l s='Login to your customer account' mod='blockuserinfo'}" class="button" rel="nofollow">{l s='Log in' mod='blockuserinfo'}</a>
-		{/if}
-	</p>
+	<div class="web-modulo large-3 columns">
+		<div id="header_user_info" class="row">
+	<!--		{l s='Welcome' mod='blockuserinfo'}  {$cookie->customer_firstname} {$cookie->customer_lastname} -->
+			{if $logged}
+			<div class="large-7 columns">
+				<a href="{$link->getPageLink('my-account', true)}" title="{l s='View my customer account' mod='blockuserinfo'}" class="account" rel="nofollow"><span>{l s='View my customer account' mod='blockuserinfo'}</span></a>
+			</div>
+			<div class="large-5 columns">
+				<a href="{$link->getPageLink('index', true, NULL, 'mylogout')}" title="{l s='Log me out' mod='blockuserinfo'}" title="{l s='Log out' mod='blockuserinfo'}" class="logout" rel="nofollow"><span>{l s='Log out' mod='blockuserinfo'}</span></a>
+			</div>
+			{else}
+			<div class="large-7 columns">
+				{l s='Login to your customer account' mod='blockuserinfo'}
+			</div>
+			<div class="large-5 columns">
+				<a href="{$link->getPageLink('my-account', true)}" title="{l s='Login to your customer account' mod='blockuserinfo'}" class="login" rel="nofollow"><span>{l s='Log in' mod='blockuserinfo'}</span></a>
+			</div>
+			{/if}
+		</div>
 	</div>
-    <br />
-    <div class="web-modulo large-4 columns">
-	<ul id="header_nav">
+    
+    <div class="web-modulo large-3 columns">
+	<div id="header_nav" class="row">
 		{if !$PS_CATALOG_MODE}
-		<li id="shopping_cart">
-			<a href="{$link->getPageLink($order_process, true)}" title="{l s='View my shopping cart' mod='blockuserinfo'}" rel="nofollow">{l s='Cart:' mod='blockuserinfo'}
+		<div id="shopping_cart">
+			<a href="{$link->getPageLink($order_process, true)}" title="{l s='View my shopping cart' mod='blockuserinfo'}" rel="nofollow"><!-- {l s='Cart:' mod='blockuserinfo'} -->
 			<span class="ajax_cart_quantity{if $cart_qties == 0} hidden{/if}">{$cart_qties}</span>
 			<span class="ajax_cart_product_txt{if $cart_qties != 1} hidden{/if}">{l s='product' mod='blockuserinfo'}</span>
 			<span class="ajax_cart_product_txt_s{if $cart_qties < 2} hidden{/if}">{l s='products' mod='blockuserinfo'}</span>
@@ -59,10 +68,10 @@
 			</span>
 			<span class="ajax_cart_no_product{if $cart_qties > 0} hidden{/if}">{l s='(empty)' mod='blockuserinfo'}</span>
 			</a>
-		</li>
+		</div>
 		{/if}
-		<li id="your_account"><a href="{$link->getPageLink('my-account', true)}" title="{l s='View my customer account' mod='blockuserinfo'}" rel="nofollow">{l s='Your Account' mod='blockuserinfo'}</a></li>
-	</ul>
+		<!-- <div id="your_account"><a href="{$link->getPageLink('my-account', true)}" title="{l s='View my customer account' mod='blockuserinfo'}" rel="nofollow">{l s='Your Account' mod='blockuserinfo'}</a></div> -->
+	</div>
 	</div>
 </div>
 

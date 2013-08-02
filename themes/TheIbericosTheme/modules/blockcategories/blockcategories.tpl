@@ -19,7 +19,7 @@
 *
 *  @author PrestaShop SA <contact@prestashop.com>
 *  @copyright  2007-2012 PrestaShop SA
-*  @license    http://opensource.org/licenses/afl-3.0.php  Academic Free License (AFL 3.0)
+*  @license	   http://opensource.org/licenses/afl-3.0.php  Academic Free License (AFL 3.0)
 *  International Registered Trademark & Property of PrestaShop SA
 *}
 
@@ -27,7 +27,8 @@
 <div id="categories_block_left" class="web-modulo large-12 columns">
 	<p class="title_block">{l s='Categories' mod='blockcategories'}</p>
 	<div class="block_content">
-		<ul class="tree {if $isDhtml}dhtml{/if}">
+		
+		<ul class="side-nav tree {if $isDhtml}dhtml{/if}">
 		{foreach from=$blockCategTree.children item=child name=blockCategTree}
 			{if $smarty.foreach.blockCategTree.last}
 				{include file="$branche_tpl_path" node=$child last='true'}
@@ -36,6 +37,7 @@
 			{/if}
 		{/foreach}
 		</ul>
+		
 		{* Javascript moved here to fix bug #PSCFI-151 *}
 		<script type="text/javascript">
 		// <![CDATA[

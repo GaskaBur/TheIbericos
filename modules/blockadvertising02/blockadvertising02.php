@@ -228,7 +228,10 @@ class BlockAdvertising02 extends Module
 	{
 		return $this->hookRightColumn($params);
 	}
-
+	public function hookHome($params)
+	{
+		return $this->hookRightColumn($params);
+	}
 	public function hookHeader($params)
 	{
 		$this->context->controller->addCSS($this->_path.'blockadvertising02.css', 'all');

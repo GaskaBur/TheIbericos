@@ -24,6 +24,17 @@
         
       </div>
    </div>
-
+   {literal}
+	<script>
+	  document.write('<script src=' +
+	  ('__proto__' in {} ? 'js/vendor/zepto' : 'js/vendor/jquery') +
+	  '.js><\/script>')
+	  </script>
+	{/literal} 
+	  	  
+	  <script>
+	    $(document).foundation();
+	  </script>
+	  
 </body>
 </html>
