@@ -27,6 +27,7 @@ class NOHCustomList extends Module
         //Configuration::updateValue('NOHHF_Titulo', '');
         //Configuration::updateValue('NOHHF_SubTitulo', '');
         Configuration::updateValue('NOHHF_Productos', '');
+		Configuration::updateValue('NOHHF_verMas', 2);
         return (parent::install() AND $this->registerHook('displayHeader') 
 		 		&& $this->registerHook('displayLeftColumn')
 		 	);
@@ -48,7 +49,7 @@ class NOHCustomList extends Module
 			foreach ($lista as $p ) {
 				$pr[] = new Product($p);
 			}
-			$this->context->smarty->assign(array("pr" => $pr, "cat" => $cat[0]['id_category']));
+			$this->context->smarty->assign(array("pr" => $pr, "cat" => Configuration::get('NOHHF_verMas')));
 			return $this->display(__FILE__, 'NOHCustomList.tpl');
 
 		}
@@ -63,6 +64,7 @@ class NOHCustomList extends Module
 		//Configuration::deleteByName('NOHHF_Titulo');
 		//Configuration::deleteByName('NOHHF_SubTitulo');
 		Configuration::deleteByName('NOHHF_Productos');
+		Configuration::deleteByName('NOHHF_verMas');
 		return (parent::uninstall());
 	}  
 
@@ -88,8 +90,14 @@ class NOHCustomList extends Module
 			//Configuration::updateValue('NOHHF_Titulo', Tools::getValue('titulo'));
 			//Configuration::updateValue('NOHHF_SubTitulo', Tools::getValue('subtitulo'));
 			Configuration::updateValue('NOHHF_Productos', $nuevaLista);
+			Configuration::updateValue('NOHHF_verMas', $_POST['cat_vermas']);
 			$output .= $this->displayConfirmation($this->l('Settings updated'));			
 		}
+		
+		$sql = "SELECT cat.id_category, cl.nombre_corto ";
+		$sql .="FROM "._DB_PREFIX_."category AS cat ";
+		$sql .="INNER JOIN "._DB_PREFIX_."category_lang AS cl ON cl.id_category = cat.id_category AND id_lang = 4";
+		$cat = DB::getInstance()->executeS($sql);
 		
 		$products = Product::getProducts(4, 0, 0, 'name', 'ASC',false,true,null);
 		$output .= '<script type="text/javascript">
@@ -239,6 +247,16 @@ function moveOptions(theSelFrom, theSelTo)
       		$output .= '</td></td>';
 
 			$output .= '</table>';
+			$output .= '<p>Selecciona la categoría para "ver mas..."</p>';
+			$output .= '<select id="cat_vermas" name="cat_vermas">';
+			foreach ($cat as $category)
+			{
+				$output .= '<option value="'.$category['id_category'].'"';
+				if ($category['id_category'] == Configuration::get('NOHHF_verMas'))
+					$output .= ' selected';
+				$output .= '>'.$category['nombre_corto'].'</option>';
+			}	
+			$output .= '</select>';
 			 	 	
  	 		$output .= '
  	 				<br>

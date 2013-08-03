@@ -53,7 +53,7 @@
 							<img src="{$img_cat_dir}default-medium_default.jpg" alt="" width="{$mediumSize.width}" height="{$mediumSize.height}" />
 						{/if*}
 					</a>-->
-					<a href="{$link->getCategoryLink($subcategory.id_category, $subcategory.link_rewrite)|escape:'htmlall':'UTF-8'}" class="cat_name" title="{$subcategory.name|escape:'htmlall':'UTF-8'}">{$subcategory.name|escape:'htmlall':'UTF-8'}</a>
+					<a href="{$link->getCategoryLink($subcategory.id_category, $subcategory.link_rewrite)|escape:'htmlall':'UTF-8'}" class="cat_name" title="{$subcategory.name|escape:'htmlall':'UTF-8'}">{$subcategory.nombre_corto|escape:'htmlall':'UTF-8'}</a>
 					{*if $subcategory.description}
 						<p class="cat_desc">{$subcategory.description}</p>
 					{/if*}

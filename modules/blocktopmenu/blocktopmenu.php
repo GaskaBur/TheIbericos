@@ -681,6 +681,7 @@ class Blocktopmenu extends Module
 			$this->_menu .= '<li '.$selected.'>';
 			$this->_menu .= '<a href="'.$category_link.'">'.$category->name.'</a>';
 
+			/* BLOQUE ANULADO PARA QUE NO GENERE SUBCATEGORÍAS
 			if (count($children))
 			{
 				$this->_menu .= '<ul>';
@@ -690,6 +691,7 @@ class Blocktopmenu extends Module
 
 				$this->_menu .= '</ul>';
 			}
+			BLOQUE ANULADO PARA QUE NO GENERE SUBCATEGORÍAS */ 
 			$this->_menu .= '</li>';
 		}
 	}

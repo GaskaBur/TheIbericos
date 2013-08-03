@@ -7,7 +7,8 @@
 				<li class="large-6 columns">
 					<a href="{$link->getProductLink($product->id)}" title="{$product->name[4]}">
 						<span>{$product->name[4]}</span>
-						<img id="thumb_{$image.id_image}" src="{$link->getImageLink($product->link_rewrite, $product->id, 'small_default')}" alt="{$image.legend|htmlspecialchars}"/>						
+                        {assign var="img" value=Product::getCover($product->id)}
+						<img id="thumb_{$image.id_image}" src="{$link->getImageLink($product->link_rewrite,$img.id_image, 'small_default')}" alt="{$image.legend|htmlspecialchars}"/>						
 					</a>					 
 				</li>
 			{/foreach}
