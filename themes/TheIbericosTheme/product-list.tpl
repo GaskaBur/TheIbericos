@@ -30,9 +30,9 @@
 	  
 	{foreach from=$products item=product name=products}
 		<li>
-            	<div class="prod-item ajax_block_product">
+            	<div class="prod-item ajax_block_product" >
             		
-                    <a href="{$product.link|escape:'htmlall':'UTF-8'}" class="product_img_link" title="{$product.name|escape:'htmlall':'UTF-8'}"><img src="{$link->getImageLink($product.link_rewrite, $product.id_image, 'home_default')}" alt="{$product.legend|escape:'htmlall':'UTF-8'}" {if isset($homeSize)} width="{$homeSize.width}" height="{$homeSize.height}"{/if} /></a>           		
+                    <a href="{$product.link|escape:'htmlall':'UTF-8'}" class="product_img_link product_image" title="{$product.name|escape:'htmlall':'UTF-8'}"><img src="{$link->getImageLink($product.link_rewrite, $product.id_image, 'home_default')}"  alt="{$product.legend|escape:'htmlall':'UTF-8'}" {if isset($homeSize)} width="{$homeSize.width}" height="{$homeSize.height}"{/if} /></a>           		
 
 					<h3><a href="{$product.link|escape:'htmlall':'UTF-8'}"  title="{$product.name|escape:'htmlall':'UTF-8'}">{$product.name|escape:'htmlall':'UTF-8'}</a></h3>
 				   

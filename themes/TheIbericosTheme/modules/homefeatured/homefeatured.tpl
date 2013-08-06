@@ -41,7 +41,7 @@
 				{if $totModulo == 0}{assign var='totModulo' value=$nbItemsPerLine}{/if}-->
 				<li>
 					<div class="prod-item ajax_block_product">
-						<a class="product_img_link" href="{$product.link}" title="{$product.name|escape:'htmlall':'UTF-8'}" ><img src="{$link->getImageLink($product.link_rewrite, $product.id_image, 'home_default')}" alt="{$product.name|escape:'htmlall':'UTF-8'}" {if isset($homeSize)} width="{$homeSize.width}" height="{$homeSize.height}"{/if} /></a>
+						<a class="product_img_link" href="{$product.link}" title="{$product.name|escape:'htmlall':'UTF-8'}" ><img src="{$link->getImageLink($product.link_rewrite, $product.id_image, 'home_default')}" id="bigpic" alt="{$product.name|escape:'htmlall':'UTF-8'}" {if isset($homeSize)} width="{$homeSize.width}" height="{$homeSize.height}"{/if} /></a>
 						<h3><a class="" href="{$product.link}" title="{$product.name|escape:'htmlall':'UTF-8'}"><span>{$product.name|truncate:50:'...'|escape:'htmlall':'UTF-8'}</span></a></h3>
 						
 						<div class="prod-buy">
