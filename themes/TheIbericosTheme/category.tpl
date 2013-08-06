@@ -60,8 +60,9 @@
 				</li>
 			{/foreach}
 			<!-- **** EJEMPLO DE COMO SE DEBERÍA GENERAR EL FILTRADO PARA MOSTRAR TAGS -->
-				<li class="item-tag"><a href="#" title="Jamones De bellota">De bellota</a></li>
-				<li class="item-tag"><a href="#" title="Jamones De cebo">De cebo</a></li>
+            {foreach from=$tags item=tag}
+            	<li class="item-tag"><a href="buscar?tag={$tag.name}" title="{$tag.name}">{$tag.name}</a></li>
+			{/foreach}
 			</ul>			
 		</div>
 		{/if}
