@@ -27,25 +27,35 @@
 <div class="homefeatured_title large-12 columns">
 	<h3 class="title_block"><span>{l s='Featured products' mod='homefeatured'}</span></h3>	
 </div>
-<div class="large-12 columns">
+<div class="row large-12 columns">
 {if isset($products) AND $products}
 			<!--{assign var='liHeight' value=250}
 			{assign var='nbItemsPerLine' value=4}
 			{assign var='nbLi' value=$products|@count}
 			{math equation="nbLi/nbItemsPerLine" nbLi=$nbLi nbItemsPerLine=$nbItemsPerLine assign=nbLines}
 			{math equation="nbLines*liHeight" nbLines=$nbLines|ceil liHeight=$liHeight assign=ulHeight}-->
-			<ul class="prod-list large-block-grid-3">
+			<ul id="product_list" class="prod-list large-block-grid-2">
 			
 			{foreach from=$products item=product name=homeFeaturedProducts}
 				<!--{math equation="(total%perLine)" total=$smarty.foreach.homeFeaturedProducts.total perLine=$nbItemsPerLine assign=totModulo}
 				{if $totModulo == 0}{assign var='totModulo' value=$nbItemsPerLine}{/if}-->
-				<li>
+				<li class="">
 					<div class="prod-item ajax_block_product">
-						<a class="product_img_link" href="{$product.link}" title="{$product.name|escape:'htmlall':'UTF-8'}" ><img src="{$link->getImageLink($product.link_rewrite, $product.id_image, 'home_default')}" id="bigpic" alt="{$product.name|escape:'htmlall':'UTF-8'}" {if isset($homeSize)} width="{$homeSize.width}" height="{$homeSize.height}"{/if} /></a>
-						<h3><a class="" href="{$product.link}" title="{$product.name|escape:'htmlall':'UTF-8'}"><span>{$product.name|truncate:50:'...'|escape:'htmlall':'UTF-8'}</span></a></h3>
+					
+						<div class="large-12 columns"> 
+							<h3><a class="" href="{$product.link}" title="{$product.name|escape:'htmlall':'UTF-8'}"><span>{$product.name|truncate:50:'...'|escape:'htmlall':'UTF-8'}</span></a></h3>
+						</div>
 						
-						<div class="prod-buy">
-							<div class="prod-price content_price">
+						<div class="prod-img large-8 columns">
+							<a class="product_img_link" href="{$product.link}" title="{$product.name|escape:'htmlall':'UTF-8'}" ><img src="{$link->getImageLink($product.link_rewrite, $product.id_image, 'home_default')}" id="bigpic" alt="{$product.name|escape:'htmlall':'UTF-8'}" {if isset($homeSize)} width="{$homeSize.width}" height="{$homeSize.height}"{/if} /></a>
+						</div>
+						
+						<div id="short_description_block" class="prod-short-desc large-4 columns">
+							<p>{$product.description_short|strip_tags:'UTF-8'|truncate:360:'...'} <br/><a href="{$product.link|escape:'htmlall':'UTF-8'}" title="{l s='Buy'} {$product.name|escape:'htmlall':'UTF-8'}" >{l s='See more'}</a></p>
+						</div>						
+						
+						<div class="prod-buy large-12 columns">
+							<div class="prod-price content_price large-4 columns">
 				            	<span>
 				            		{if !$priceDisplay}
 				            			{convertPrice price=$product.price}
@@ -54,15 +64,17 @@
 		            				{/if}
 				            	</span>
 				            </div>
-				            <div class="prod-action row collapse">
-				            	<div class="prod-quant large-3 columns">
-				            		<input type="text" id="cuantosQuieres_{$product.id_product|intval}" value="1"/>
-				            		<small>{l s='Quantity' mod='homefeatured'}</small>
-								</div>
-				            	<div class="large-9 columns"> 
-									<a class="exclusive ajax_add_to_cart_button button prefix" rel="ajax_id_product_{$product.id_product}" href="{$link->getPageLink('cart')}?qty=1&amp;id_product={$product.id_product}&amp;token={$static_token}&amp;add" title="{l s='Add to cart' mod='homefeatured'}">{l s='Add to cart' mod='homefeatured'}</a>
-				            	</div>
-				            </div>
+				            
+			            	<!--
+							<div class="prod-quant large-2 columns">
+			            		<input type="text" id="cuantosQuieres_{$product.id_product|intval}" value="1"/>				            		
+							</div>
+-->
+							
+			            	<div class="large-6 columns"> 
+								<a class="exclusive ajax_add_to_cart_button button prefix" rel="ajax_id_product_{$product.id_product}" href="{$link->getPageLink('cart')}?qty=1&amp;id_product={$product.id_product}&amp;token={$static_token}&amp;add" title="{l s='Add to cart' mod='homefeatured'}">{l s='Add to cart' mod='homefeatured'}</a>
+			            	</div>
+				            
 						</div> <!-- prod-buy -->
 					</div>
 		        </li>

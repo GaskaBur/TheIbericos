@@ -5,6 +5,13 @@ html body {
 }
 body a {}
 body a:hover {color: #fff; background-color: #f57d03;}
+body h1, body h2, body h3, body h4, body h5, body h6 {line-height: 1.1em; letter-spacing: -0.03em}
+body h1 {font-size: 2.2em;}
+body h3 {font-size: 1.4em;}
+body h4 {color:#818181;}
+body h5 {}
+body h6 {}
+body p {line-height: 1.3em;}
 .web-container {}
 body .button, body button {}
 
@@ -48,10 +55,10 @@ aside.web-aside {
 
 .web-menu {font-size: 1em;padding: 0;}
 
-.web-menu ul, .web-menu ul li {list-style-type: none; line-height: 1.4em; padding: 0}
+.web-menu ul, .web-menu ul li {list-style-type: none;  padding: 0}
 
 
-.web-menu ul li a {font-size: 1em; display: block; float: left;}
+.web-menu ul li a {font-size: 1em; display: block; float: left; line-height: 1.2em;}
 
 .web-menu.vertical ul {}
 
@@ -59,7 +66,7 @@ aside.web-aside {
 .web-menu.vertical ul li  {}
 .web-menu.vertical ul li a {padding: 0.5em;width: 98%}
 
-.web-menu.horizontal, .web-menu.horizontal ul {overflow: visible;}
+.web-menu.horizontal, .web-menu.horizontal ul {overflow: visible; display: block; clear: both;}
 .web-menu.horizontal ul li {float: left; overflow: visible; display: block}
 
 .web-menu.horizontal ul li a {padding: 0.5em;}
@@ -77,6 +84,7 @@ aside.web-aside {
 
 /************ ETIQUETAS ÚLTILES ******************/
 body .hidden {display: none;}
+
 /************ Web Main Header ******************/
 .web-main-header {overflow: hidden;position: relative;}
 .web-main-header .logo {position: absolute;top:0;z-index: 1000}
@@ -332,8 +340,10 @@ ul.prod-list {
 }
 
 .prod-item {
-	
-	background:#EAEAEA;
+	display: block;	
+	float: left;
+	width: 100%;
+	background:#EAEAEA; 
 	position:relative
 }
 
@@ -343,16 +353,15 @@ ul.prod-list {
 	margin:0px;
 }
 .prod-item h3 {
-	position:absolute;
+	/*
+position:absolute;
 	top:0;
 	left:0;
-	font-size:1.1em;
-	line-height:1.3em;
 	background:#EAEAEA;
 	background: rgba(255, 255, 255, 0.5);
 	padding:0.3em 0.5em;
+*/	
 	color:#434343;
-	width: 100%
 }
 .prod-item a:hover h3 {
 	background:#FFF;
@@ -385,16 +394,18 @@ ul.prod-list {
 	position:relative;
 }
 
-.prod-card .prod-left h2{
+.prod-card .prod-left h2 {
 	font-size:2em;
 	line-height:25px;
+	color: #434343;
+	/*
 	position:absolute;
 	top:5px;
 	left:10px;
 	width:85%;
-	background: rgba(255, 255, 255, 0.5); 
-	color: #434343;
+	background: rgba(255, 255, 255, 0.5);	
 	padding:7px 10px;
+*/
 }
 
 .prod-buy, .prod-more, p.prod-des {
@@ -404,7 +415,7 @@ ul.prod-list {
 */
 }
 .prod-action { clear: both}
-
+.prod-short-desc {font-size: 0.8em; line-height: 1.2em;}
 p.prod-des  {
 	line-height:1em;
 	font-size:1.4em;
@@ -426,11 +437,11 @@ border:1px solid #424242;
 
 body .prod-price {
 	background: #808080;
-	padding:0.5em;
-	color:#FFF;	
-	float:left;
-	clear: both;
+	color:#FFF;
 }
+body .prod-list .prod-price {height: 2em;}
+body .prod-price span {display: block; margin:0.3em}
+body .unit-price {font-size: 0.7em; color:#dedede;}
 .prod-price-single {}
 .prod-card .button {
 	/* float:right; */
@@ -493,10 +504,73 @@ span.view_scroll_spacer {
 .resetimg {
 	padding:10px 0 0;
 }
+/* module productcomments ********************************************************************** */
+.rating {
+	
+}
+.rating:after {
+	
+}
+.cancel, .star {
+	
+}
+.cancel, .cancel a { background: url(../../../modules/productcomments/img/delete.gif) no-repeat 0 -16px !important }
+.star, .star a { background: url(../../../modules/productcomments/img/star.gif) no-repeat 0 0 }
+.cancel a, .star a {
+}
+div.star_on a {  }
+div.star_hover a, div.star a:hover { }
+.pack_content {}
+.pack_price {
+	
+}
+.confirmation {
+	
+}
+#page .rte { }
+
+.listcomment {
+
+}
+.listcomment li {
+	
+}
+.listcomment .titlecomment {
+	
+}
+.listcomment .txtcomment {
+	
+}
+.listcomment .authorcomment {}
+
 /************* Accesorios y relacionados ********/
 #accesories .prod-amount {padding-left: 0.5em; font-size: 0.9em}
 #accesories .button {font-size: 0.85em;}
 
+
+/* CART steps *********************************************************************** */
+ul#order_step { }
+ul.step {
+	
+}
+ul.step li {
+	
+}
+ul.step li a, ul.step li.step_current span, ul.step li.step_current_end span {
+	
+}
+ul.step li.step_current {
+	}
+
+ul.step li.step_current_end {
+	
+}
+ul.step li.step_todo span {
+	}
+ul.step li.step_done {
+	
+}
+/*ul.step li#step_end {background:url(../img/step_end.gif) no-repeat center bottom transparent}*/
 
 
 

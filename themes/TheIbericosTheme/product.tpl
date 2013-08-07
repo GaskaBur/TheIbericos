@@ -153,6 +153,7 @@ var fieldRequired = '{l s='Please fill in all required fields, then save the cus
 <article class="large-12 columns prod-card">
 
 	<div id="primary_block" >
+		<h1>{$product->name|escape:'htmlall':'UTF-8'}</h1>
 
 		{**** if isset($adminActionDisplay) && $adminActionDisplay}
 		<div id="admin-action" class="large-12 columns">
@@ -174,13 +175,13 @@ var fieldRequired = '{l s='Please fill in all required fields, then save the cus
 
 		<!-- right infos -->
 		<div id="pb-right-column" class="large-5 columns prod-left">
-			<!-- product img-->
+						<!-- product img-->
 			<div class="prod-img" id="image-block">
 	            	<span id="view_full_size">
 					<img src="{$link->getImageLink($product->link_rewrite, $cover.id_image, 'large_default')}" {if $jqZoomEnabled}class="jqzoom" alt="{$link->getImageLink($product->link_rewrite, $cover.id_image, 'thickbox_default')}"{else} title="{$product->name|escape:'htmlall':'UTF-8'}" alt="{$product->name|escape:'htmlall':'UTF-8'}" {/if} id="bigpic" width="{$largeSize.width}" height="{$largeSize.height}" />
 					<span class="span_link*BORRARESTOPARAANTERIORFUNCIONALIDAD*">{* l s='View full size'*}</span>
 				</span>
-	                <h2>{$product->name|escape:'htmlall':'UTF-8'}</h2>
+	                
 	            </div>
 	            <div class="prod-gal">
 	            	<!-- thumbnails -->
@@ -355,8 +356,8 @@ var fieldRequired = '{l s='Please fill in all required fields, then save the cus
 							<input type="submit" name="Submit" value="{l s='Add to cart'}" class="button prefix" title="{l s='Add to cart'}" />
 						</div>
 					{/if}
-                    <div>
-                    	<a href="{$link->getPageLink('contact', true)}">{l s='Para grandes pedidos contacte con nosotros'}</a>
+                    <div class="ask-large-quantities">
+                    	<a href="{$link->getPageLink('contact', true)}" title="{l s='If you need large quantities, please contact us'}" class="">{l s='If you need large quantities, please contact us'}</a>
                     </div>	
                 
             	</div> <!-- prod-action -->
@@ -504,15 +505,7 @@ var fieldRequired = '{l s='Please fill in all required fields, then save the cus
 	            
 		    </div>
 			
-	        
-	        
-	        
-	        
-	        
-	        
-	        
-	        
-	        
+	        	        
 	        
 			{if isset($HOOK_EXTRA_RIGHT) && $HOOK_EXTRA_RIGHT}{$HOOK_EXTRA_RIGHT}{/if}
 		</div>
@@ -546,9 +539,9 @@ var fieldRequired = '{l s='Please fill in all required fields, then save the cus
 	                <td>{$quantity_discount.quantity|intval}</td>
 	                <td>
 	                    {if $quantity_discount.price >= 0 OR $quantity_discount.reduction_type == 'amount'}
-	                       -{convertPrice price=$quantity_discount.real_value|floatval}
+	                       - {convertPrice price=$quantity_discount.real_value|floatval}
 	                   {else}
-	                       -{$quantity_discount.real_value|floatval}%
+	                       - {$quantity_discount.real_value|floatval}%
 	                   {/if}
 	                </td>
 	            </tr>
@@ -604,11 +597,10 @@ var fieldRequired = '{l s='Please fill in all required fields, then save the cus
 					{if ($accessory.allow_oosp || $accessory.quantity > 0) AND $accessory.available_for_order AND !isset($restricted_country_mode)}
 						{assign var='accessoryLink' value=$link->getProductLink($accessory.id_product, $accessory.link_rewrite, $accessory.category)}
 						<li>
+							<h3><a href="{$accessoryLink|escape:'htmlall':'UTF-8'}" title="{$accessory.name|escape:'htmlall':'UTF-8'}">{$accessory.name|escape:'htmlall':'UTF-8'}</a></h3>
 							<div class="prod-item ajax_block_product row collapse">
                                 <a href="{$accessoryLink|escape:'htmlall':'UTF-8'}" title="{$accessory.legend|escape:'htmlall':'UTF-8'}"  class="web-prodpic product_img_link"><img src="{$link->getImageLink($accessory.link_rewrite, $accessory.id_image, 'home_default')}" alt="{$accessory.legend|escape:'htmlall':'UTF-8'}" width="{$homeSize.width}" height="{$homeSize.height}" /></a>
-                                
-                             
-								<h3><a href="{$accessoryLink|escape:'htmlall':'UTF-8'}">{$accessory.name|escape:'htmlall':'UTF-8'}</a></h3>
+                                								
 								<div class="prod-buy">
                         	
 		                            <div class="prod-price content_price large-4 columns">

@@ -7,16 +7,16 @@
 				<li class="large-6 columns">
 					<a href="{$link->getProductLink($product->id)}" title="{$product->name[4]}">
 						<span>{$product->name[4]}</span>
-						<img id="thumb_{$image.id_image}" src="{$link->getImageLink($product->link_rewrite, $product->id, 'small_default')}" alt="{$image.legend|htmlspecialchars}"/>						
+											
 					</a>					 
 				</li>
 			{/foreach}
 		</ul>
 	</div>
 	{if $cat eq ""}
-	<a href="{$link->getCategoryLink(2)}" title="{l s='See More products' mod='NOHCustomList'}" class="web-more" >
+	<a href="{$link->getCategoryLink(Configuration::get("NOHHF_verMas"))}" title="{l s='See More products' mod='NOHCustomList'}" class="web-more" >
 	{else}
-	<a href="{$link->getCategoryLink($cat)}" title="{l s='See More products' mod='NOHCustomList'}" class="web-more" >
+	<a href="{$link->getCategoryLink(Configuration::get("NOHHF_verMas"))}" title="{l s='See More products' mod='NOHCustomList'}" class="web-more" >
 	{/if}
 	{l s='See More' mod='NOHCustomList'}
 	</a> 

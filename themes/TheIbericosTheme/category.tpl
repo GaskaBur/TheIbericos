@@ -28,8 +28,8 @@
 
 {if isset($category)}
 	{if $category->id AND $category->active}
-	<article class="large-12 columns prod-category">
-		<div class="prod-category-title row">
+	<article class="prod-category">
+		<div class="prod-category-title large-12 columns row">
 	    	<h1>
 	    		{strip}
 					{$category->name|escape:'htmlall':'UTF-8'}
@@ -41,9 +41,9 @@
 		</div>
 		{if isset($subcategories)}
 		<!-- Subcategories -->
-		<div id="subcategories" class="web-menu horizontal row">
+		<div id="subcategories" class="web-menu horizontal large-12 columns row">
 			<!-- <h3>{l s='Subcategories'}</h3> -->
-			<ul class="inline_list large-12 columns">
+			<ul>
 			{foreach from=$subcategories item=subcategory}
 				<li class="item-subcategory">
 					<!-- <a href="{$link->getCategoryLink($subcategory.id_category, $subcategory.link_rewrite)|escape:'htmlall':'UTF-8'}" title="{$subcategory.name|escape:'htmlall':'UTF-8'}" class="img">
@@ -66,7 +66,7 @@
 			</ul>			
 		</div>
 		{/if}
-		<div class="prod-category-desc row">
+		<div class="prod-category-desc large-12 columns row">
 		{if $category->description}
 			<div class="cat_desc">
 				<p>{$category->description}</p>
@@ -102,25 +102,25 @@
 		</div> <!-- /.prod-category-desc -->
 
 		{if $products}
-			<div class="content_sortPagiBar">
+			{*<div class="content_sortPagiBar">
 				{include file="$tpl_dir./pagination.tpl"}
 				<div class="sortPagiBar row">
 					{include file="./product-sort.tpl"}
-					{*include file="./product-compare.tpl"*}
+					{include file="./product-compare.tpl"}
 					{include file="./nbr-product-page.tpl"}
 				</div>
-			</div>
+			</div>*}
 			
 			{include file="./product-list.tpl" products=$products}
 			
-			<div class="content_sortPagiBar">
+			{*<div class="content_sortPagiBar">
 				<div class="sortPagiBar row">
 					{include file="./product-sort.tpl"}
-					{*include file="./product-compare.tpl"*}
+					{include file="./product-compare.tpl"}
 					{include file="./nbr-product-page.tpl"}
 				</div>
 				{include file="./pagination.tpl"}
-			</div>
+			</div>*}
 		{/if}
 		</article>
 	{elseif $category->id}
