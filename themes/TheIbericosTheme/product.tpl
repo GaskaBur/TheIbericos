@@ -354,7 +354,10 @@ var fieldRequired = '{l s='Please fill in all required fields, then save the cus
 						<div id="add_to_cart" class="large-9 columns" >						
 							<input type="submit" name="Submit" value="{l s='Add to cart'}" class="button prefix" title="{l s='Add to cart'}" />
 						</div>
-					{/if}	
+					{/if}
+                    <div>
+                    	<a href="{$link->getPageLink('contact', true)}">{l s='Para grandes pedidos contacte con nosotros'}</a>
+                    </div>	
                 
             	</div> <!-- prod-action -->
             	</div>              

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+        <module>
+            <name>NOHCmsList</name>
+            <displayName><![CDATA[NOHCmsList]]></displayName>
+            <version><![CDATA[1.0]]></version>
+            <description><![CDATA[NOHCmsList | created by Noises Of Hill]]></description>
+            <author><![CDATA[Sergio Gil Perez]]></author>
+            <tab><![CDATA[others]]></tab>
+            <is_configurable>1</is_configurable>
+            <need_instance>1</need_instance>
+	<limited_countries></limited_countries>
+        </module>
