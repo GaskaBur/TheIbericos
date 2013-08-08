@@ -72,8 +72,9 @@
 					<div class="prod-quant large-2 columns">
                     	<input type="text" id="cuantosQuieres_{$product.id_product|intval}" value="1"/>                    	
                     </div>
+                    <input type="text" id="cuantosQuieres_{$product.id_product|intval}" value="1"/> 
 -->                        
-
+					<input type="hidden" id="cuantosQuieres_{$product.id_product|intval}" value="1"/> 
                 	{if ($product.id_product_attribute == 0 || (isset($add_prod_display) && ($add_prod_display == 1))) && $product.available_for_order && !isset($restricted_country_mode) && $product.minimal_quantity <= 1 && $product.customizable != 2 && !$PS_CATALOG_MODE}
 						{if ($product.allow_oosp || $product.quantity > 0)}
 							{if isset($static_token)}

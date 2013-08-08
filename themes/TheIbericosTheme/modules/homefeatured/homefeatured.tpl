@@ -70,7 +70,7 @@
 			            		<input type="text" id="cuantosQuieres_{$product.id_product|intval}" value="1"/>				            		
 							</div>
 -->
-							
+							<input type="hidden" id="cuantosQuieres_{$product.id_product|intval}" value="1"/> 
 			            	<div class="large-6 columns"> 
 								<a class="exclusive ajax_add_to_cart_button button prefix" rel="ajax_id_product_{$product.id_product}" href="{$link->getPageLink('cart')}?qty=1&amp;id_product={$product.id_product}&amp;token={$static_token}&amp;add" title="{l s='Add to cart' mod='homefeatured'}">{l s='Add to cart' mod='homefeatured'}</a>
 			            	</div>
